@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 
 class NeumorphismButton extends StatelessWidget {
   final Widget child;
-  final double buttonWidth;
-  final double buttonHeight;
-  const NeumorphismButton({super.key, required this.child, required this.buttonWidth, required this.buttonHeight});
+  const NeumorphismButton({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: buttonHeight,
-      width: buttonWidth,
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.primary,
         boxShadow: [

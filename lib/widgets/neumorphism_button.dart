@@ -2,59 +2,40 @@ import 'package:flutter/material.dart';
 
 class NeumorphismButton extends StatelessWidget {
   final Widget child;
-  final double width;
-  final double height;
-  const NeumorphismButton({super.key, required this.child, required this.width, required this.height});
+  final double buttonWidth;
+  final double buttonHeight;
+  const NeumorphismButton({super.key, required this.child, required this.buttonWidth, required this.buttonHeight});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width,
-      height: height,
+      height: buttonHeight,
+      width: buttonWidth,
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.primary,
         boxShadow: [
           BoxShadow(
-            color: Theme.of(context).colorScheme.shadow.withOpacity(0.3),
-            blurStyle: BlurStyle.inner,
-            offset: const Offset(1, 1),
-            blurRadius: 2,
+            blurRadius: 24,
+            color: Theme.of(context).colorScheme.shadow,
+            offset: const Offset(10, 10),
           ),
-          BoxShadow(
-            color: Theme.of(context).colorScheme.shadow.withOpacity(0.5),
-            blurStyle: BlurStyle.inner,
-            offset: const Offset(-1, -1),
-            blurRadius: 2,
+          const BoxShadow(
+            blurRadius: 24,
+            color: Color(0xFFFFFFFF),
+            offset: Offset(-10, -10),
           ),
-          BoxShadow(
-            color: Theme.of(context).colorScheme.shadow.withOpacity(0.2),
-            blurStyle: BlurStyle.normal,
-            offset: const Offset(-8, 8),
-            blurRadius: 16,
-          ),
-          BoxShadow(
-            color: Theme.of(context).colorScheme.shadow.withOpacity(0.2),
-            blurStyle: BlurStyle.normal,
-            offset: const Offset(8, -8),
-            blurRadius: 16,
-          ),
-          BoxShadow(
-            color: Theme.of(context).colorScheme.primary.withOpacity(0.9),
-            blurStyle: BlurStyle.normal,
-            offset: const Offset(-8, -8),
-            blurRadius: 16,
-          ),
-          BoxShadow(
-            color: Theme.of(context).colorScheme.shadow.withOpacity(0.9),
-            blurStyle: BlurStyle.normal,
-            offset: const Offset(8, 8),
-            blurRadius: 20,
-          ),
-          
         ],
-        
+        gradient: const LinearGradient(
+          stops: [0,1],
+          colors: [
+            Color(0xFFE5E5E5),
+            Color(0xFFF5F5F5),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(34),
       ),
-      child: child,
     );
   }
 }

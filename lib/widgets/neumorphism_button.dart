@@ -28,14 +28,15 @@ class NeumorphismButton extends StatelessWidget {
         gradient: const LinearGradient(
           stops: [0,1],
           colors: [
-            Color(0xFFE5E5E5),
+            Color(0xFFCECECE),
             Color(0xFFF5F5F5),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius: BorderRadius.circular(34),
+        borderRadius: BorderRadius.circular(40),
       ),
+      child: child,
     );
   }
 }

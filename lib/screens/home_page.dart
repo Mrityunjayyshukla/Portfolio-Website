@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/widgets/bottom_nav_bar.dart';
-import 'package:portfolio/widgets/center_panel.dart';
+import 'package:portfolio/screens/name_title.dart';
 import 'package:portfolio/widgets/left_panel.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,6 +14,21 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   bool _isHovered1 = false;
   bool _isHovered2 = false;
+
+  int _selectedIndex = 0;
+  final List<Widget> _widgetOptions = <Widget>[
+    CenterPanel(),
+    Text("About"),
+    Text("Projects"),
+    Text("Experience"),
+  ];
+  
+  void _onItemTapped(int index){
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,19 +103,22 @@ class _HomePageState extends State<HomePage> {
         ),
 
         // Body
-        body: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              LeftPanel(),
-              CenterPanel(),
-              SizedBox(width: 80),
+              const LeftPanel(),
+              _widgetOptions[_selectedIndex],
+              const SizedBox(width: 80),
             ],
           ),
         ),
         
-        bottomNavigationBar: const BottomNavBar()
+        bottomNavigationBar: BottomNavBar(
+          selectedIndex: _selectedIndex,
+          onItemTapped: _onItemTapped,
+        )
     );
   }
 }

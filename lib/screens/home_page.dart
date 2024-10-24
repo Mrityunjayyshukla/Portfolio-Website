@@ -62,15 +62,17 @@ class _HomePageState extends State<HomePage> {
                         _isHovered1 = false;
                       });
                     },
-                    child: Text(
-                      "Resume",
-                      style: GoogleFonts.roboto(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w500,
-                        color: Theme.of(context).colorScheme.secondary,
-                        decoration: _isHovered1
-                            ? TextDecoration.underline
-                            : TextDecoration.none,
+                    child: AnimatedScale(
+                      scale: _isHovered1 ? 1.1 : 1,
+                      curve: Curves.easeInOut,
+                      duration: const Duration(milliseconds: 80),
+                      child: Text(
+                        "Resume",
+                        style: GoogleFonts.roboto(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w500,
+                          color: Theme.of(context).colorScheme.secondary,
+                        ),
                       ),
                     ),
                   ),
@@ -86,15 +88,17 @@ class _HomePageState extends State<HomePage> {
                         _isHovered2 = false;
                       });
                     },
-                    child: Text(
-                      "About Me",
-                      style: GoogleFonts.roboto(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w500,
-                        color: Theme.of(context).colorScheme.secondary,
-                        decoration: _isHovered2
-                            ? TextDecoration.underline
-                            : TextDecoration.none,
+                    child: AnimatedScale(
+                      scale: _isHovered2 ? 1.1: 1,
+                      curve: Curves.easeInOut,
+                      duration: const Duration(milliseconds: 80),
+                      child: Text(
+                        "About Me",
+                        style: GoogleFonts.roboto(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w500,
+                          color: Theme.of(context).colorScheme.secondary,
+                        ),
                       ),
                     ),
                   ),

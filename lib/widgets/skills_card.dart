@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow; 
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:portfolio/data/skills_data.dart';
 
 class SkillsCard extends StatefulWidget {
-  final Widget child;
-  const SkillsCard({super.key, required this.child});
+  final String imageFileName;
+  const SkillsCard({super.key, required this.imageFileName});
 
   @override
   State<SkillsCard> createState() => _SkillsCardState();
@@ -25,7 +27,8 @@ class _SkillsCardState extends State<SkillsCard> {
           isPressed = false;
         });
       },
-      child: Container(
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 80),
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           border: Border.all(color: const Color.fromARGB(255, 209, 209, 209), width: 0.5),
@@ -47,7 +50,11 @@ class _SkillsCardState extends State<SkillsCard> {
             
           ]
         ),
-        child: widget.child,
+        child: SvgPicture.asset(
+          "$skillsIconPath${widget.imageFileName}",
+          height: 50,
+          width: 50,
+        ),
       ),
     );
   }

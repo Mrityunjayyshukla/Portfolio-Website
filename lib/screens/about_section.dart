@@ -13,9 +13,6 @@ class AboutSection extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const SizedBox(
-            height: 200,
-          ),
           Text(
             "About Me".toUpperCase(),
             style: GoogleFonts.roboto(
@@ -24,13 +21,13 @@ class AboutSection extends StatelessWidget {
           const SizedBox(height: 48),
           Text(
             textAlign: TextAlign.center,
-            "Results-driven Computer Science and Engineering professional with a\nstrong foundation in Programming and Problem-Solving. Adept in Python\nProgramming, UI/UX Design, Cross-Platform App Development, and\nMachine Learning. Highly skilled in leveraging emerging technologies to\ndeliver innovative solutions. Eager to contribute technical expertise and\npassion for programming to a dynamic software development team",
+            "Results-driven Computer Science and Engineering professional with a strong foundation in Programming and Problem-Solving. Adept in Python\nProgramming, UI/UX Design, Cross-Platform App Development, and Machine Learning. Highly skilled in leveraging emerging technologies to\ndeliver innovative solutions. Eager to contribute technical expertise and passion for programming to a dynamic software development team",
             style: GoogleFonts.roboto(
               fontWeight: FontWeight.normal,
               fontSize: 24,
             ),
           ),
-          const SizedBox(height: 200),
+          const SizedBox(height: 100),
           Text(
             "Skills".toUpperCase(),
             style: GoogleFonts.roboto(
@@ -75,7 +72,13 @@ class AboutSection extends StatelessWidget {
                 )
             ],
           ),
-          const SizedBox(height: 50),
+          const SizedBox(height: 100),
+          Text(
+            "Experience".toUpperCase(),
+            style: GoogleFonts.roboto(
+                fontWeight: FontWeight.bold, fontSize: 32, letterSpacing: 5),
+          ),
+          const SizedBox(height: 48),
         ],
       ),
     );

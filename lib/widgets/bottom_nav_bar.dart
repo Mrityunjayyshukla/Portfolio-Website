@@ -19,7 +19,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       double padding = constraints.maxWidth * 0.38;
 
       return Padding(
-        padding: EdgeInsets.symmetric(horizontal: padding, vertical: 24),
+        padding: EdgeInsets.only(left: padding, right: padding, bottom: 24),
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 40),
           decoration: BoxDecoration(

@@ -139,7 +139,9 @@ class _HomePageState extends State<HomePage> {
         child: GestureDetector(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
-            child: Container(
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              curve: Curves.easeInOut,
               padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
               decoration: BoxDecoration(
                 color: _fabHover? Theme.of(context).colorScheme.secondary : Theme.of(context).colorScheme.primary,

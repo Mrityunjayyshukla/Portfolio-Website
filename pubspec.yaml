@@ -16,6 +16,7 @@ dependencies:
   carousel_slider_plus: ^7.0.1
   flutter_svg: ^2.0.10+1
   flutter_inset_box_shadow: ^1.0.7
+  timeline_tile: ^2.0.0
 
 dev_dependencies:
   flutter_test:

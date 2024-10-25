@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                       curve: Curves.easeInOut,
                       duration: const Duration(milliseconds: 80),
                       child: Text(
-                        "About Me",
+                        "LinkedIn",
                         style: GoogleFonts.roboto(
                           fontSize: 24,
                           fontWeight: FontWeight.w500,
@@ -108,6 +108,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+      
 
       // Body
       body: Padding(
@@ -148,7 +149,9 @@ class _HomePageState extends State<HomePage> {
               curve: Curves.easeInOut,
               padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
               decoration: BoxDecoration(
-                color: _fabHover? Theme.of(context).colorScheme.secondary : Theme.of(context).colorScheme.primary,
+                color: _fabHover
+                    ? Theme.of(context).colorScheme.secondary
+                    : Theme.of(context).colorScheme.primary,
                 boxShadow: [
                   BoxShadow(
                     blurRadius: 24,
@@ -166,7 +169,9 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 "Contact Me",
                 style: GoogleFonts.roboto(
-                  color: _fabHover ? Theme.of(context).colorScheme.primary : Theme.of(context).colorScheme.secondary,
+                  color: _fabHover
+                      ? Theme.of(context).colorScheme.primary
+                      : Theme.of(context).colorScheme.secondary,
                   fontWeight: FontWeight.bold,
                 ),
               ),

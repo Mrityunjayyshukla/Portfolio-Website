@@ -86,7 +86,14 @@ class AboutSection extends StatelessWidget {
               style: GoogleFonts.roboto(
                   fontWeight: FontWeight.bold, fontSize: 32, letterSpacing: 5),
             ),
-            const TimelineCustomWidget()
+            const TimelineCustomWidget(),
+            const SizedBox(height: 100),
+            Text(
+              "Education".toUpperCase(),
+              style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.bold, fontSize: 32, letterSpacing: 5),
+            ),
+            const EducationCustomWidget(),
           ],
         ),
       ),

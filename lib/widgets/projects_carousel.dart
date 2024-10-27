@@ -4,13 +4,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
 
 class ProjectsCarousel extends StatelessWidget {
-  const ProjectsCarousel({super.key});
+  final InfiniteScrollController controller;
+  const ProjectsCarousel({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 300,
       child: InfiniteCarousel.builder(
+        controller: controller,
         itemCount: 5,
         itemExtent: 500,
         velocityFactor: 0.1,

@@ -32,6 +32,7 @@ flutter:
     - assets/memoji.png
     - assets/icons/
     - assets/icons/skills_icons/
+    - assets/images/
 
 
   # fonts:

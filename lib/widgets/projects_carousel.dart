@@ -83,22 +83,65 @@ class _ProjectCardState extends State<ProjectCard> {
             Positioned(
               bottom: 20,
               left: 10,
-              child: _isCardHovered ? Container(
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Text(
-                  "Hello World",
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ): const SizedBox.shrink(),
+              child: _isCardHovered
+                  ? Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 24, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Text(
+                        "Hello World",
+                        style: GoogleFonts.roboto(
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    )
+                  : const SizedBox.shrink(),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class ScrollButtons extends StatefulWidget {
+  final IconData icon;
+  final Function() onTap;
+  const ScrollButtons({super.key, required this.icon, required this.onTap});
+
+  @override
+  State<ScrollButtons> createState() => _ScrollButtonsState();
+}
+
+class _ScrollButtonsState extends State<ScrollButtons> {
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: widget.onTap,
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.primary,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(
+              color: const Color.fromARGB(255, 209, 209, 209), width: 0.5),
+          boxShadow: const [
+            BoxShadow(
+              offset: Offset(5, 5),
+              color: Color(0xFFA7A9AF),
+              blurRadius: 5,
+            ),
+            BoxShadow(
+              offset: Offset(-5, -5),
+              color: Colors.white,
+              blurRadius: 5,
+            )
+          ],
+        ),
+        child: Center(child: Icon(widget.icon)),
       ),
     );
   }

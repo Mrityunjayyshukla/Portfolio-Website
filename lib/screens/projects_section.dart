@@ -41,22 +41,28 @@ class _ProjectsSectionState extends State<ProjectsSection> {
               controller: _controllerProgramming,
             ),
             const SizedBox(height: 24),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ElevatedButton(onPressed: (){
-                  _controllerProgramming.previousItem(
-                    duration: Duration(seconds: 1),
-                    curve: Curves.easeInOut,
-                  );
-                }, child: Icon(Icons.arrow_back_ios)),
-                ElevatedButton(onPressed: (){
-                  _controllerProgramming.nextItem(
-                    duration: Duration(seconds: 1),
-                    curve: Curves.easeInOut,
-                  );
-                }, child: Icon(Icons.arrow_forward_ios)),
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ScrollButtons(
+                    icon: Icons.arrow_back_ios_new, 
+                    onTap: () => _controllerProgramming.previousItem(
+                      duration: const Duration(seconds: 1),
+                      curve: Curves.easeInOut,
+                    ),
+                  ),
+                  ScrollButtons(
+                    icon: Icons.arrow_forward_ios, 
+                    onTap: () => _controllerProgramming.nextItem(
+                      duration: const Duration(seconds: 1),
+                      curve: Curves.easeInOut,
+                    ),
+                  ),
+                  
+                ],
+              ),
             ),
             const SizedBox(height: 48),
             Text(
@@ -70,22 +76,27 @@ class _ProjectsSectionState extends State<ProjectsSection> {
               controller: _controllerUIUX,
             ),
             const SizedBox(height: 24),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ElevatedButton(onPressed: (){
-                  _controllerUIUX.previousItem(
-                    duration: Duration(seconds: 1),
-                    curve: Curves.easeInOut,
-                  );
-                }, child: Icon(Icons.arrow_back_ios)),
-                ElevatedButton(onPressed: (){
-                  _controllerUIUX.nextItem(
-                    duration: Duration(seconds: 1),
-                    curve: Curves.easeInOut,
-                  );
-                }, child: Icon(Icons.arrow_forward_ios)),
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ScrollButtons(
+                    icon: Icons.arrow_back_ios_new, 
+                    onTap: () => _controllerUIUX.previousItem(
+                      duration: const Duration(seconds: 1),
+                      curve: Curves.easeInOut,
+                    ),
+                  ),
+                  ScrollButtons(
+                    icon: Icons.arrow_forward_ios, 
+                    onTap: () => _controllerUIUX.previousItem(
+                      duration: const Duration(seconds: 1),
+                      curve: Curves.easeInOut,
+                    ),
+                  ),
+                ],
+              ),
             ),
             const SizedBox(height: 48),
             Text(
@@ -98,22 +109,27 @@ class _ProjectsSectionState extends State<ProjectsSection> {
               controller: _controller3D,
             ),
             const SizedBox(height: 24),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ElevatedButton(onPressed: (){
-                  _controller3D.previousItem(
-                    duration: Duration(seconds: 1),
-                    curve: Curves.easeInOut,
-                  );
-                }, child: Icon(Icons.arrow_back_ios)),
-                ElevatedButton(onPressed: (){
-                  _controller3D.nextItem(
-                    duration: Duration(seconds: 1),
-                    curve: Curves.easeInOut,
-                  );
-                }, child: Icon(Icons.arrow_forward_ios)),
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ScrollButtons(
+                    icon: Icons.arrow_back_ios_new, 
+                    onTap: () => _controller3D.previousItem(
+                      duration: const Duration(seconds: 1),
+                      curve: Curves.easeInOut,
+                    ),
+                  ),
+                  ScrollButtons(
+                    icon: Icons.arrow_forward_ios, 
+                    onTap: () => _controller3D.previousItem(
+                      duration: const Duration(seconds: 1),
+                      curve: Curves.easeInOut,
+                    ),
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: 100),
             

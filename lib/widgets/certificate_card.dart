@@ -1,58 +1,87 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
+import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CertificateCard extends StatelessWidget {
+class CertificateCard extends StatefulWidget {
   const CertificateCard({super.key});
 
   @override
+  State<CertificateCard> createState() => _CertificateCardState();
+}
+
+class _CertificateCardState extends State<CertificateCard> {
+  bool _isHover = false;
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primary,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-            color: const Color.fromARGB(255, 209, 209, 209), width: 0.5),
-        boxShadow: const [
-          BoxShadow(
-            offset: Offset(5, 5),
-            color: Color(0xFFA7A9AF),
-            blurRadius: 5,
-          ),
-          BoxShadow(
-            offset: Offset(-5, -5),
-            color: Colors.white,
-            blurRadius: 5,
-          )
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            height: 250,
-            decoration: BoxDecoration(
-              color: Colors.red,
-              borderRadius: BorderRadius.circular(16),
+    return MouseRegion(
+      onEnter: (event) => setState(() {
+        _isHover = true;
+      }),
+      onExit: (event) => setState(() {
+        _isHover = false;
+      }),
+      child: AnimatedContainer(
+        duration: Duration(milliseconds: 80),
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.primary,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              offset: _isHover ? const Offset(-10, -10) : const Offset(-10,-10),
+              color: Colors.white,
+              blurRadius: _isHover ? 5 : 20,
+              inset: _isHover,
             ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            "Certificate Name",
-            style: GoogleFonts.roboto(
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
+            BoxShadow(
+              blurRadius: _isHover ? 5 : 20,
+              offset: _isHover ? const Offset(10, 10) : const Offset(10,10),
+              color: Color(0xFFA7A9AF),
+              inset: _isHover,
             ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            "Certificate Authority",
-            style: GoogleFonts.roboto(
-              fontSize: 12,
-              fontWeight: FontWeight.w500,
+            
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 250,
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(16),
+              ),
             ),
-          ),
-        ],
+            const SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Certificate Name",
+                  style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
+                Text(
+                  "Validity Date",
+                  style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 12,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 4),
+            Text(
+              "Certificate Authority",
+              style: GoogleFonts.roboto(
+                fontSize: 12,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

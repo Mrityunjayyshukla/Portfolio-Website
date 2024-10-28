@@ -35,8 +35,8 @@ class _AchievementsSectionState extends State<AchievementsSection> {
                   itemCount: 5,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
-                    crossAxisSpacing: 16,
-                    mainAxisSpacing: 16,
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 20,
                     mainAxisExtent: 340,
                   ),
                   itemBuilder: (context, index) {

@@ -21,36 +21,60 @@ class _CertificateCardState extends State<CertificateCard> {
         _isHover = false;
       }),
       child: AnimatedContainer(
-        duration: Duration(milliseconds: 80),
+        duration: const Duration(milliseconds: 80),
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.primary,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              offset: _isHover ? const Offset(-10, -10) : const Offset(-10,-10),
+              offset:
+                  _isHover ? const Offset(-10, -10) : const Offset(-10, -10),
               color: Colors.white,
               blurRadius: _isHover ? 5 : 20,
               inset: _isHover,
             ),
             BoxShadow(
               blurRadius: _isHover ? 5 : 20,
-              offset: _isHover ? const Offset(10, 10) : const Offset(10,10),
-              color: Color(0xFFA7A9AF),
+              offset: _isHover ? const Offset(10, 10) : const Offset(10, 10),
+              color: const Color(0xFFA7A9AF),
               inset: _isHover,
             ),
-            
           ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: 250,
-              decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.circular(16),
-              ),
+            Stack(
+              children: [
+                Container(
+                  height: 250,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                ),
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          color: Colors.yellow,
+                          height: 48,
+                          width: 48,
+                        ),
+                        Container(
+                          color: Colors.blue,
+                          height: 48,
+                          width: 48,
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+              ],
             ),
             const SizedBox(height: 8),
             Row(

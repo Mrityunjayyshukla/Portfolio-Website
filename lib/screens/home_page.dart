@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/screens/about_section.dart';
+import 'package:portfolio/screens/achievements_section.dart';
 import 'package:portfolio/screens/projects_section.dart';
 import 'package:portfolio/widgets/bottom_nav_bar.dart';
 import 'package:portfolio/screens/name_title.dart';
@@ -17,12 +18,12 @@ class _HomePageState extends State<HomePage> {
   bool _isHovered1 = false;
   bool _isHovered2 = false;
 
-  int _selectedIndex = 2;
+  int _selectedIndex = 3;
   final List<Widget> _widgetOptions = <Widget>[
     const CenterPanel(),
     const AboutSection(),
     const ProjectsSection(),
-    const Text("Experience"),
+    const AchievementsSection(),
   ];
 
   void _onItemTapped(int index) {

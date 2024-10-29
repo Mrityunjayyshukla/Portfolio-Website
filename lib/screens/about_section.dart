@@ -10,7 +10,7 @@ class AboutSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      physics: const ScrollPhysics(),
+      physics: ScrollPhysics(),
       child: ConstrainedBox(
         constraints: BoxConstraints(
           maxWidth: MediaQuery.of(context).size.width/1.5, // Or some fixed width

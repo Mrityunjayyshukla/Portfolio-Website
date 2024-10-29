@@ -13,6 +13,7 @@ class _AchievementsSectionState extends State<AchievementsSection> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: const ScrollPhysics(),
       child: ConstrainedBox(
         constraints: BoxConstraints(
           maxWidth: MediaQuery.of(context).size.width / 1.28,

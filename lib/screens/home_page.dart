@@ -38,6 +38,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.primary,
+      
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(100),
         child: Padding(
@@ -110,7 +111,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      
 
       // Body
       body: Padding(

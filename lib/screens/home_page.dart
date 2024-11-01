@@ -5,6 +5,7 @@ import 'package:portfolio/screens/achievements_section.dart';
 import 'package:portfolio/screens/projects_section.dart';
 import 'package:portfolio/widgets/bottom_nav_bar.dart';
 import 'package:portfolio/screens/name_title.dart';
+import 'package:portfolio/widgets/contact_textfield.dart';
 import 'package:portfolio/widgets/left_panel.dart';
 
 class HomePage extends StatefulWidget {
@@ -216,80 +217,13 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                                 const SizedBox(height: 32),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 16),
-                                  decoration: BoxDecoration(
-                                    color:
-                                        Theme.of(context).colorScheme.primary,
-                                    border: Border.all(
-                                        width: 2,
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .secondary),
-                                    borderRadius: BorderRadius.circular(24),
-                                  ),
-                                  child: TextField(
-                                    decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      hintText: "Enter Full Name",
-                                      hintStyle: GoogleFonts.roboto(
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                                const ContactTextfield(
+                                    hintText: "Enter Full Name"),
                                 const SizedBox(height: 16),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 16),
-                                  decoration: BoxDecoration(
-                                    color:
-                                        Theme.of(context).colorScheme.primary,
-                                    border: Border.all(
-                                        width: 2,
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .secondary),
-                                    borderRadius: BorderRadius.circular(24),
-                                  ),
-                                  child: TextField(
-                                    decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      hintText: "Email Address",
-                                      hintStyle: GoogleFonts.roboto(
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                                const ContactTextfield(
+                                    hintText: "Email Address"),
                                 const SizedBox(height: 16),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 16),
-                                  decoration: BoxDecoration(
-                                    color:
-                                        Theme.of(context).colorScheme.primary,
-                                    border: Border.all(
-                                        width: 2,
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .secondary),
-                                    borderRadius: BorderRadius.circular(24),
-                                  ),
-                                  child: TextField(
-                                    decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      hintText: "Subject",
-                                      hintStyle: GoogleFonts.roboto(
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                                const ContactTextfield(hintText: "Subject"),
                                 const SizedBox(height: 16),
                                 Text(
                                   "Tell me about your project",
@@ -313,8 +247,9 @@ class _HomePageState extends State<HomePage> {
                                     borderRadius: BorderRadius.circular(24),
                                   ),
                                   child: TextField(
+                                    cursorColor:
+                                        Theme.of(context).colorScheme.secondary,
                                     maxLines: 10,
-                                    keyboardType: TextInputType.multiline,
                                     decoration: InputDecoration(
                                       border: InputBorder.none,
                                       hintText: "Enter your Message",

@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.primary,
-      
+
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(100),
         child: Padding(
@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                       });
                     },
                     child: AnimatedScale(
-                      scale: _isHovered2 ? 1.1: 1,
+                      scale: _isHovered2 ? 1.1 : 1,
                       curve: Curves.easeInOut,
                       duration: const Duration(milliseconds: 80),
                       child: Text(
@@ -144,6 +144,221 @@ class _HomePageState extends State<HomePage> {
           });
         },
         child: GestureDetector(
+          onTap: () {
+            showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                backgroundColor: Theme.of(context).colorScheme.primary,
+                scrollable: true,
+                actions: [
+                  GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Theme.of(context).colorScheme.secondary,
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8, horizontal: 24),
+                      child: Text(
+                        "Close",
+                        style: GoogleFonts.roboto(
+                          color: Theme.of(context).colorScheme.primary,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+                content: Container(
+                  padding: const EdgeInsets.all(24),
+                  width: MediaQuery.of(context).size.width / 1.5,
+                  child: SingleChildScrollView(
+                    physics: const NeverScrollableScrollPhysics(),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          flex: 1,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Let's connect,\nTell me about your\nproject",
+                                style: GoogleFonts.roboto(
+                                  fontSize: 48,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              const SizedBox(height: 16),
+                              Text(
+                                "Let's create something together",
+                                style: GoogleFonts.roboto(
+                                  fontSize: 32,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                            flex: 1,
+                            child: Column(
+                              children: [
+                                Text(
+                                  "Send us a message",
+                                  style: GoogleFonts.roboto(
+                                    fontSize: 32,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const SizedBox(height: 32),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 16),
+                                  decoration: BoxDecoration(
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
+                                    border: Border.all(
+                                        width: 2,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .secondary),
+                                    borderRadius: BorderRadius.circular(24),
+                                  ),
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      hintText: "Enter Full Name",
+                                      hintStyle: GoogleFonts.roboto(
+                                        color: Colors.grey,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 16),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 16),
+                                  decoration: BoxDecoration(
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
+                                    border: Border.all(
+                                        width: 2,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .secondary),
+                                    borderRadius: BorderRadius.circular(24),
+                                  ),
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      hintText: "Email Address",
+                                      hintStyle: GoogleFonts.roboto(
+                                        color: Colors.grey,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 16),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 16),
+                                  decoration: BoxDecoration(
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
+                                    border: Border.all(
+                                        width: 2,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .secondary),
+                                    borderRadius: BorderRadius.circular(24),
+                                  ),
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      hintText: "Subject",
+                                      hintStyle: GoogleFonts.roboto(
+                                        color: Colors.grey,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 16),
+                                Text(
+                                  "Tell me about your project",
+                                  style: GoogleFonts.roboto(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const SizedBox(height: 16),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 16, vertical: 16),
+                                  decoration: BoxDecoration(
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
+                                    border: Border.all(
+                                        width: 2,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .secondary),
+                                    borderRadius: BorderRadius.circular(24),
+                                  ),
+                                  child: TextField(
+                                    maxLines: 10,
+                                    keyboardType: TextInputType.multiline,
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      hintText: "Enter your Message",
+                                      hintStyle: GoogleFonts.roboto(
+                                        color: Colors.grey,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 16),
+                                GestureDetector(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary,
+                                    ),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 8, horizontal: 24),
+                                    child: Text(
+                                      "Submit",
+                                      style: GoogleFonts.roboto(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ))
+                      ],
+                    ),
+                  ),
+                ),
+
+                // actionsAlignment: MainAxisAlignment.end,
+              ),
+            );
+          },
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: AnimatedContainer(

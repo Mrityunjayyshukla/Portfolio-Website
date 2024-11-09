@@ -1,9 +1,16 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CertificateCard extends StatefulWidget {
-  const CertificateCard({super.key});
+  final String certificateGiver;
+  final String certificateTopic;
+  final String title;
+  final String certificateAuthority;
+  final String validityDate;
+  const CertificateCard({super.key, required this.certificateGiver, required this.certificateTopic, required this.title, required this.certificateAuthority, required this.validityDate});
 
   @override
   State<CertificateCard> createState() => _CertificateCardState();
@@ -48,9 +55,9 @@ class _CertificateCardState extends State<CertificateCard> {
             Stack(
               children: [
                 Container(
-                  height: 250,
+                  height: 120,
                   decoration: BoxDecoration(
-                    color: Colors.red,
+                    color: Colors.grey.shade200,
                     borderRadius: BorderRadius.circular(16),
                   ),
                 ),
@@ -60,16 +67,19 @@ class _CertificateCardState extends State<CertificateCard> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Container(
-                          color: Colors.yellow,
-                          height: 48,
-                          width: 48,
+                        Image.asset(
+                          "assets/images/certficate_icons/${widget.certificateGiver}",
+                          height: 80,
+                          width: 80,
+                          fit: BoxFit.cover,
                         ),
-                        Container(
-                          color: Colors.blue,
-                          height: 48,
-                          width: 48,
-                        ),
+                        Image.asset(
+                          "assets/images/certficate_icons/${widget.certificateTopic}",
+                          height: 80,
+                          width: 80,
+                          fit: BoxFit.cover,
+                        )
+                        
                       ],
                     ),
                   ),
@@ -81,14 +91,14 @@ class _CertificateCardState extends State<CertificateCard> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Certificate Name",
+                  widget.title,
                   style: GoogleFonts.roboto(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
                 ),
                 Text(
-                  "Validity Date",
+                  widget.validityDate,
                   style: GoogleFonts.roboto(
                     fontWeight: FontWeight.w500,
                     fontSize: 12,
@@ -98,7 +108,7 @@ class _CertificateCardState extends State<CertificateCard> {
             ),
             const SizedBox(height: 4),
             Text(
-              "Certificate Authority",
+              widget.certificateAuthority,
               style: GoogleFonts.roboto(
                 fontSize: 12,
                 fontWeight: FontWeight.w500,

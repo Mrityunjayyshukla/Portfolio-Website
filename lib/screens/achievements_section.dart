@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/data/certificate_data.dart';
 import 'package:portfolio/widgets/certificate_card.dart';
 
 class AchievementsSection extends StatefulWidget {
@@ -33,15 +34,21 @@ class _AchievementsSectionState extends State<AchievementsSection> {
                   padding: const EdgeInsets.symmetric(horizontal: 32),
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 5,
+                  itemCount: certificateData.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
                     crossAxisSpacing: 20,
                     mainAxisSpacing: 20,
-                    mainAxisExtent: 340,
+                    mainAxisExtent: 210,
                   ),
                   itemBuilder: (context, index) {
-                    return const CertificateCard();
+                    return CertificateCard(
+                      certificateGiver: certificateData[index].certificateGiver,
+                      certificateTopic: certificateData[index].certificateTopic,
+                      title: certificateData[index].title,
+                      certificateAuthority: certificateData[index].certificateAuthority,
+                      validityDate: certificateData[index].validityDate,
+                    );
                   }),
             ),
             const SizedBox(height: 60),

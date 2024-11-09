@@ -18,6 +18,7 @@ dependencies:
   flutter_inset_box_shadow: ^1.0.7
   timeline_tile: ^2.0.0
   infinite_carousel: ^1.1.1
+  url_launcher: ^6.1.12
 
 dev_dependencies:
   flutter_test:
@@ -33,7 +34,10 @@ flutter:
     - assets/icons/
     - assets/icons/skills_icons/
     - assets/images/
-
+    - assets/images/certficate_icons/
+    - assets/images/certficate_icons/hackerrank.png
+    - assets/images/certficate_icons/mysql.png
+    - assets/images/certficate_icons/python.png
 
   # fonts:
   #   - family: Schyler

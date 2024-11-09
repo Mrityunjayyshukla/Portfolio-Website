@@ -48,6 +48,7 @@ class _AchievementsSectionState extends State<AchievementsSection> {
                       title: certificateData[index].title,
                       certificateAuthority: certificateData[index].certificateAuthority,
                       validityDate: certificateData[index].validityDate,
+                      link: certificateData[index].link,
                     );
                   }),
             ),

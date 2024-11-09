@@ -1,8 +1,7 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CertificateCard extends StatefulWidget {
   final String certificateGiver;
@@ -10,7 +9,16 @@ class CertificateCard extends StatefulWidget {
   final String title;
   final String certificateAuthority;
   final String validityDate;
-  const CertificateCard({super.key, required this.certificateGiver, required this.certificateTopic, required this.title, required this.certificateAuthority, required this.validityDate});
+  final String link;
+  const CertificateCard({
+    super.key,
+    required this.certificateGiver,
+    required this.certificateTopic,
+    required this.title,
+    required this.certificateAuthority,
+    required this.validityDate,
+    required this.link,
+  });
 
   @override
   State<CertificateCard> createState() => _CertificateCardState();
@@ -27,94 +35,101 @@ class _CertificateCardState extends State<CertificateCard> {
       onExit: (event) => setState(() {
         _isHover = false;
       }),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 80),
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.primary,
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-            BoxShadow(
-              offset:
-                  _isHover ? const Offset(-10, -10) : const Offset(-10, -10),
-              color: Colors.white,
-              blurRadius: _isHover ? 5 : 20,
-              inset: _isHover,
-            ),
-            BoxShadow(
-              blurRadius: _isHover ? 5 : 20,
-              offset: _isHover ? const Offset(10, 10) : const Offset(10, 10),
-              color: const Color(0xFFA7A9AF),
-              inset: _isHover,
-            ),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Stack(
-              children: [
-                Container(
-                  height: 120,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade200,
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                ),
-                Positioned.fill(
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Image.asset(
-                          "assets/images/certficate_icons/${widget.certificateGiver}",
-                          height: 80,
-                          width: 80,
-                          fit: BoxFit.cover,
-                        ),
-                        Image.asset(
-                          "assets/images/certficate_icons/${widget.certificateTopic}",
-                          height: 80,
-                          width: 80,
-                          fit: BoxFit.cover,
-                        )
-                        
-                      ],
+      child: GestureDetector(
+        onTap: () {
+          launchUrl(
+            Uri.parse(widget.link),
+            mode: LaunchMode.inAppBrowserView,
+          );
+        },
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 80),
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primary,
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                offset:
+                    _isHover ? const Offset(-10, -10) : const Offset(-10, -10),
+                color: Colors.white,
+                blurRadius: _isHover ? 5 : 20,
+                inset: _isHover,
+              ),
+              BoxShadow(
+                blurRadius: _isHover ? 5 : 20,
+                offset: _isHover ? const Offset(10, 10) : const Offset(10, 10),
+                color: const Color(0xFFA7A9AF),
+                inset: _isHover,
+              ),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Stack(
+                children: [
+                  Container(
+                    height: 120,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade200,
+                      borderRadius: BorderRadius.circular(16),
                     ),
                   ),
-                )
-              ],
-            ),
-            const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  widget.title,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-                ),
-                Text(
-                  widget.validityDate,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 12,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 4),
-            Text(
-              widget.certificateAuthority,
-              style: GoogleFonts.roboto(
-                fontSize: 12,
-                fontWeight: FontWeight.w500,
+                  Positioned.fill(
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Image.asset(
+                            "assets/images/certficate_icons/${widget.certificateGiver}",
+                            height: 80,
+                            width: 80,
+                            fit: BoxFit.cover,
+                          ),
+                          Image.asset(
+                            "assets/images/certficate_icons/${widget.certificateTopic}",
+                            height: 80,
+                            width: 80,
+                            fit: BoxFit.cover,
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
               ),
-            ),
-          ],
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    widget.title,
+                    style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    widget.validityDate,
+                    style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 4),
+              Text(
+                widget.certificateAuthority,
+                style: GoogleFonts.roboto(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

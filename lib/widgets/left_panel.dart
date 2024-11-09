@@ -11,6 +11,7 @@ class LeftPanel extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         NeumorphismButton(
+          link: "https://www.behance.net/mrityunjayshukla",
           child: SvgPicture.asset(
             "assets/icons/behance.svg",
             height: 32,
@@ -19,6 +20,7 @@ class LeftPanel extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         NeumorphismButton(
+          link: "https://www.artstation.com/mrityunjay_2003",
           child: SvgPicture.asset(
             "assets/icons/artstation.svg",
             height: 32,
@@ -27,6 +29,7 @@ class LeftPanel extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         NeumorphismButton(
+          link: "https://github.com/Mrityunjayyshukla",
           child: SvgPicture.asset(
             "assets/icons/github.svg",
             height: 32,
@@ -35,6 +38,7 @@ class LeftPanel extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         NeumorphismButton(
+          link: "https://youtube.com",
           child: SvgPicture.asset(
             "assets/icons/twitter.svg",
             height: 32,
@@ -43,6 +47,7 @@ class LeftPanel extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         NeumorphismButton(
+          link: "https://www.linkedin.com/in/mrityunjayyshukla",
           child: SvgPicture.asset(
             "assets/icons/linkedin.svg",
             height: 32,
@@ -51,6 +56,7 @@ class LeftPanel extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         NeumorphismButton(
+          link: "https://youtube.com",
           child: SvgPicture.asset(
             "assets/icons/mail.svg",
             height: 32,

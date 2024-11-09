@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BottomNavBar extends StatefulWidget {
   final int selectedIndex;
@@ -108,15 +109,24 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     _resumeHover = false;
                   });
                 },
-                child: SvgPicture.asset(
-                  "icons/resume.svg",
-                  height: 32,
-                  width: 32,
-                  colorFilter: ColorFilter.mode(
-                    _resumeHover
-                        ? Theme.of(context).colorScheme.secondary
-                        : Theme.of(context).colorScheme.tertiary,
-                    BlendMode.srcIn,
+                child: GestureDetector(
+                  onTap: () {
+                    const resumeLink = "https://drive.google.com/file/d/1Frtg9RPMcv24rWdtQUUR7zVcDjI_KASN/view?usp=drivesdk";
+                    launchUrl(
+                      Uri.parse(resumeLink),
+                      mode: LaunchMode.inAppWebView,
+                    );
+                  },
+                  child: SvgPicture.asset(
+                    "icons/resume.svg",
+                    height: 32,
+                    width: 32,
+                    colorFilter: ColorFilter.mode(
+                      _resumeHover
+                          ? Theme.of(context).colorScheme.secondary
+                          : Theme.of(context).colorScheme.tertiary,
+                      BlendMode.srcIn,
+                    ),
                   ),
                 ),
               ),

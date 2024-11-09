@@ -1,39 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NeumorphismButton extends StatelessWidget {
+  final String link;
   final Widget child;
-  const NeumorphismButton({super.key, required this.child});
+  const NeumorphismButton({super.key, required this.child, required this.link});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primary,
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 24,
-            color: Theme.of(context).colorScheme.shadow,
-            offset: const Offset(10, 10),
-          ),
-          const BoxShadow(
-            blurRadius: 24,
-            color: Color(0xFFFFFFFF),
-            offset: Offset(-10, -10),
-          ),
-        ],
-        gradient: const LinearGradient(
-          stops: [0,1],
-          colors: [
-            Color(0xFFCECECE),
-            Color(0xFFF5F5F5),
+    return GestureDetector(
+      onTap: (){
+        launchUrl(
+          Uri.parse(link),
+          mode: LaunchMode.inAppBrowserView,
+        );
+      },
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 24,
+              color: Theme.of(context).colorScheme.shadow,
+              offset: const Offset(10, 10),
+            ),
+            const BoxShadow(
+              blurRadius: 24,
+              color: Color(0xFFFFFFFF),
+              offset: Offset(-10, -10),
+            ),
           ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          gradient: const LinearGradient(
+            stops: [0,1],
+            colors: [
+              Color(0xFFCECECE),
+              Color(0xFFF5F5F5),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(40),
         ),
-        borderRadius: BorderRadius.circular(40),
+        child: child,
       ),
-      child: child,
     );
   }
 }

@@ -7,6 +7,7 @@ import 'package:portfolio/widgets/bottom_nav_bar.dart';
 import 'package:portfolio/screens/name_title.dart';
 import 'package:portfolio/widgets/contact_textfield.dart';
 import 'package:portfolio/widgets/left_panel.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -19,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   bool _isHovered1 = false;
   bool _isHovered2 = false;
 
-  int _selectedIndex = 3;
+  int _selectedIndex = 0;
   final List<Widget> _widgetOptions = <Widget>[
     const CenterPanel(),
     const AboutSection(),
@@ -66,16 +67,25 @@ class _HomePageState extends State<HomePage> {
                         _isHovered1 = false;
                       });
                     },
-                    child: AnimatedScale(
-                      scale: _isHovered1 ? 1.1 : 1,
-                      curve: Curves.easeInOut,
-                      duration: const Duration(milliseconds: 80),
-                      child: Text(
-                        "Resume",
-                        style: GoogleFonts.roboto(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w500,
-                          color: Theme.of(context).colorScheme.secondary,
+                    child: GestureDetector(
+                      onTap: (){
+                        const resumeLink = "https://drive.google.com/file/d/1Frtg9RPMcv24rWdtQUUR7zVcDjI_KASN/view?usp=drivesdk";
+                        launchUrl(
+                          Uri.parse(resumeLink),
+                          mode: LaunchMode.inAppBrowserView,
+                        );
+                      },
+                      child: AnimatedScale(
+                        scale: _isHovered1 ? 1.1 : 1,
+                        curve: Curves.easeInOut,
+                        duration: const Duration(milliseconds: 80),
+                        child: Text(
+                          "Resume",
+                          style: GoogleFonts.roboto(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w500,
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),
                         ),
                       ),
                     ),
@@ -92,16 +102,25 @@ class _HomePageState extends State<HomePage> {
                         _isHovered2 = false;
                       });
                     },
-                    child: AnimatedScale(
-                      scale: _isHovered2 ? 1.1 : 1,
-                      curve: Curves.easeInOut,
-                      duration: const Duration(milliseconds: 80),
-                      child: Text(
-                        "LinkedIn",
-                        style: GoogleFonts.roboto(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w500,
-                          color: Theme.of(context).colorScheme.secondary,
+                    child: GestureDetector(
+                      onTap: () {
+                        const linkedInLink = "https://www.linkedin.com/in/mrityunjayyshukla";
+                        launchUrl(
+                          Uri.parse(linkedInLink),
+                          mode: LaunchMode.inAppBrowserView
+                        );
+                      },
+                      child: AnimatedScale(
+                        scale: _isHovered2 ? 1.1 : 1,
+                        curve: Curves.easeInOut,
+                        duration: const Duration(milliseconds: 80),
+                        child: Text(
+                          "LinkedIn",
+                          style: GoogleFonts.roboto(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w500,
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),
                         ),
                       ),
                     ),

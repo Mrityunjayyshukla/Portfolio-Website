@@ -131,7 +131,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                 ],
               ),
             ),
-            SizedBox(height: 100),
+            const SizedBox(height: 100),
             
           ],
         ),

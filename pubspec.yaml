@@ -38,6 +38,7 @@ flutter:
     - assets/images/certficate_icons/hackerrank.png
     - assets/images/certficate_icons/mysql.png
     - assets/images/certficate_icons/python.png
+    - assets/images/projects/
 
   # fonts:
   #   - family: Schyler

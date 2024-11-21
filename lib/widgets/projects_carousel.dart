@@ -4,8 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
 
 class ProjectsCarousel extends StatelessWidget {
+  final String projectImage;
+  final String projectTitle;
   final InfiniteScrollController controller;
-  const ProjectsCarousel({super.key, required this.controller});
+  const ProjectsCarousel({super.key, required this.controller, required this.projectImage, required this.projectTitle});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,10 @@ class ProjectsCarousel extends StatelessWidget {
         anchor: 0,
         physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index, realindex) {
-          return const ProjectCard();
+          return ProjectCard(
+            projectImage: projectImage,
+            projectTitle: projectTitle,
+          );
         },
       ),
     );
@@ -28,7 +33,9 @@ class ProjectsCarousel extends StatelessWidget {
 }
 
 class ProjectCard extends StatefulWidget {
-  const ProjectCard({super.key});
+  final String projectImage;
+  final String projectTitle;
+  const ProjectCard({super.key, required this.projectImage, required this.projectTitle});
 
   @override
   State<ProjectCard> createState() => _ProjectCardState();
@@ -75,8 +82,8 @@ class _ProjectCardState extends State<ProjectCard> {
                   BlendMode.saturation,
                 ),
                 child: Image.asset(
-                  'images/bedroom_project.jpg',
-                  fit: BoxFit.cover,
+                  widget.projectImage,
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
@@ -92,7 +99,7 @@ class _ProjectCardState extends State<ProjectCard> {
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
-                        "Hello World",
+                        widget.projectTitle,
                         style: GoogleFonts.roboto(
                           fontWeight: FontWeight.w500,
                         ),

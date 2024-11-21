@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
+import 'package:portfolio/data/projects_data.dart';
 import 'package:portfolio/widgets/projects_carousel.dart';
 
 class ProjectsSection extends StatefulWidget {
@@ -11,7 +12,8 @@ class ProjectsSection extends StatefulWidget {
 }
 
 class _ProjectsSectionState extends State<ProjectsSection> {
-  final InfiniteScrollController _controllerProgramming = InfiniteScrollController();
+  final InfiniteScrollController _controllerProgramming =
+      InfiniteScrollController();
   final InfiniteScrollController _controllerUIUX = InfiniteScrollController();
   final InfiniteScrollController _controller3D = InfiniteScrollController();
 
@@ -39,6 +41,8 @@ class _ProjectsSectionState extends State<ProjectsSection> {
             const SizedBox(height: 48),
             ProjectsCarousel(
               controller: _controllerProgramming,
+              projectImage: "images/projects/ThreeD-5.jpg",
+              projectTitle: "Hello World",
             ),
             const SizedBox(height: 24),
             Padding(
@@ -47,20 +51,19 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ScrollButtons(
-                    icon: Icons.arrow_back_ios_new, 
+                    icon: Icons.arrow_back_ios_new,
                     onTap: () => _controllerProgramming.previousItem(
                       duration: const Duration(seconds: 1),
                       curve: Curves.easeInOut,
                     ),
                   ),
                   ScrollButtons(
-                    icon: Icons.arrow_forward_ios, 
+                    icon: Icons.arrow_forward_ios,
                     onTap: () => _controllerProgramming.nextItem(
                       duration: const Duration(seconds: 1),
                       curve: Curves.easeInOut,
                     ),
                   ),
-                  
                 ],
               ),
             ),
@@ -71,9 +74,23 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                   fontWeight: FontWeight.w500, fontSize: 24, letterSpacing: 5),
             ),
             const SizedBox(height: 48),
-            
-            ProjectsCarousel(
-              controller: _controllerUIUX,
+            SizedBox(
+              height: 300,
+              child: InfiniteCarousel.builder(
+                controller: _controllerUIUX,
+                itemCount: uxProjectData.length,
+                itemExtent: 500,
+                velocityFactor: 0.1,
+                center: true,
+                anchor: 0,
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (context, index, realindex) {
+                  return ProjectCard(
+                    projectImage: uxProjectData[index].imagePath,
+                    projectTitle: uxProjectData[index].title,
+                  );
+                },
+              ),
             ),
             const SizedBox(height: 24),
             Padding(
@@ -82,14 +99,14 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ScrollButtons(
-                    icon: Icons.arrow_back_ios_new, 
+                    icon: Icons.arrow_back_ios_new,
                     onTap: () => _controllerUIUX.previousItem(
                       duration: const Duration(seconds: 1),
                       curve: Curves.easeInOut,
                     ),
                   ),
                   ScrollButtons(
-                    icon: Icons.arrow_forward_ios, 
+                    icon: Icons.arrow_forward_ios,
                     onTap: () => _controllerUIUX.previousItem(
                       duration: const Duration(seconds: 1),
                       curve: Curves.easeInOut,
@@ -105,8 +122,23 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                   fontWeight: FontWeight.w500, fontSize: 24, letterSpacing: 5),
             ),
             const SizedBox(height: 48),
-            ProjectsCarousel(
-              controller: _controller3D,
+            SizedBox(
+              height: 300,
+              child: InfiniteCarousel.builder(
+                controller: _controller3D,
+                itemCount: 5,
+                itemExtent: 500,
+                velocityFactor: 0.1,
+                center: true,
+                anchor: 0,
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (context, index, realindex) {
+                  return ProjectCard(
+                    projectImage: threeDProjectData[index].imagePath,
+                    projectTitle: threeDProjectData[index].title,
+                  );
+                },
+              ),
             ),
             const SizedBox(height: 24),
             Padding(
@@ -115,14 +147,14 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ScrollButtons(
-                    icon: Icons.arrow_back_ios_new, 
+                    icon: Icons.arrow_back_ios_new,
                     onTap: () => _controller3D.previousItem(
                       duration: const Duration(seconds: 1),
                       curve: Curves.easeInOut,
                     ),
                   ),
                   ScrollButtons(
-                    icon: Icons.arrow_forward_ios, 
+                    icon: Icons.arrow_forward_ios,
                     onTap: () => _controller3D.previousItem(
                       duration: const Duration(seconds: 1),
                       curve: Curves.easeInOut,
@@ -132,7 +164,6 @@ class _ProjectsSectionState extends State<ProjectsSection> {
               ),
             ),
             const SizedBox(height: 100),
-            
           ],
         ),
       ),

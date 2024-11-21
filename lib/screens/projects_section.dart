@@ -107,7 +107,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                   ),
                   ScrollButtons(
                     icon: Icons.arrow_forward_ios,
-                    onTap: () => _controllerUIUX.previousItem(
+                    onTap: () => _controllerUIUX.nextItem(
                       duration: const Duration(seconds: 1),
                       curve: Curves.easeInOut,
                     ),
@@ -155,7 +155,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                   ),
                   ScrollButtons(
                     icon: Icons.arrow_forward_ios,
-                    onTap: () => _controller3D.previousItem(
+                    onTap: () => _controller3D.nextItem(
                       duration: const Duration(seconds: 1),
                       curve: Curves.easeInOut,
                     ),

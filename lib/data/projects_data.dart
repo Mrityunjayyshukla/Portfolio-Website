@@ -44,3 +44,10 @@ List<ProjectsData> uxProjectData = <ProjectsData>[
     title: "Tune-in Music Player",
   ),
 ];
+
+List<ProjectsData> programmingData = <ProjectsData> [
+  ProjectsData(
+    imagePath: "${imagePath}UX-2.png", 
+    title: "Marvel-Watch",
+  ),
+];

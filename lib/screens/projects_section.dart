@@ -43,16 +43,16 @@ class _ProjectsSectionState extends State<ProjectsSection> {
               height: 300,
               child: InfiniteCarousel.builder(
                 controller: _controllerProgramming,
-                itemCount: 5,
+                itemCount: programmingData.length,
                 itemExtent: 500,
                 velocityFactor: 0.1,
                 center: true,
                 anchor: 0,
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (context, index, realindex) {
-                  return const ProjectCard(
-                    projectImage: "images/projects/UX-2.png",
-                    projectTitle: "Marvel-Watch",
+                  return ProjectCard(
+                    projectImage: programmingData[index].imagePath,
+                    projectTitle: programmingData[index].title,
                   );
                 },
               ),

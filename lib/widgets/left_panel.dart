@@ -38,7 +38,7 @@ class LeftPanel extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         NeumorphismButton(
-          link: "https://youtube.com",
+          link: "https://x.com/mrityunjayys?t=oxt-BjNbsh8tgCbsdh2Nw&s=09",
           child: SvgPicture.asset(
             "assets/icons/twitter.svg",
             height: 32,
@@ -50,15 +50,6 @@ class LeftPanel extends StatelessWidget {
           link: "https://www.linkedin.com/in/mrityunjayyshukla",
           child: SvgPicture.asset(
             "assets/icons/linkedin.svg",
-            height: 32,
-            width: 32,
-          )
-        ),
-        const SizedBox(height: 24),
-        NeumorphismButton(
-          link: "https://youtube.com",
-          child: SvgPicture.asset(
-            "assets/icons/mail.svg",
             height: 32,
             width: 32,
           )

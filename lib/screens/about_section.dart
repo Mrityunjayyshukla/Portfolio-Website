@@ -4,8 +4,19 @@ import 'package:portfolio/data/skills_data.dart';
 import 'package:portfolio/widgets/skills_card.dart';
 import 'package:portfolio/widgets/timeline_widget.dart';
 
-class AboutSection extends StatelessWidget {
+class AboutSection extends StatefulWidget {
   const AboutSection({super.key});
+
+  @override
+  State<AboutSection> createState() => _AboutSectionState();
+}
+
+class _AboutSectionState extends State<AboutSection> {
+  bool _pythonHovered = false;
+  bool _uiuxHovered = false;
+  bool _threedDHovered = false;
+  bool _flutterHovered = false;
+
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +35,111 @@ class AboutSection extends StatelessWidget {
                   fontWeight: FontWeight.bold, fontSize: 32, letterSpacing: 5),
             ),
             const SizedBox(height: 48),
-            Text(
-              textAlign: TextAlign.center,
-              "Results-driven Computer Science and Engineering professional with a strong foundation in Programming and Problem-Solving. Adept in Python Programming, UI/UX Design, Cross-Platform App Development, and Machine Learning. Highly skilled in leveraging emerging technologies to deliver innovative solutions. Eager to contribute technical expertise and passion for programming to a dynamic software development team",
-              style: GoogleFonts.roboto(
-                fontWeight: FontWeight.normal,
-                fontSize: 24,
+            RichText(
+              text: TextSpan(
+                style: GoogleFonts.roboto(
+                  fontSize: 24, color: Colors.black,
+                ),
+                children: [
+                  const TextSpan(text: "Results-driven Computer Science and Engineering professional with a strong foundation in Programming and Problem-Solving. Adept in "),
+                  WidgetSpan(
+                    alignment: PlaceholderAlignment.middle,
+                    child: MouseRegion(
+                      onEnter: (_){
+                        setState(() {
+                          _pythonHovered = true;
+                        });
+                      },
+                      onExit: (_) {
+                        setState(() {
+                          _pythonHovered = false;
+                        });
+                      },
+                      child: Text(
+                        "Python Programming",
+                        style: GoogleFonts.roboto(
+                          fontWeight: FontWeight.bold,
+                          color: _pythonHovered ? Colors.grey : Colors.black,
+                          fontSize: 24,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const TextSpan(text: ", "),
+                  WidgetSpan(
+                    alignment: PlaceholderAlignment.middle,
+                    child: MouseRegion(
+                      onEnter: (_){
+                        setState(() {
+                          _uiuxHovered = true;
+                        });
+                      },
+                      onExit: (_) {
+                        setState(() {
+                          _uiuxHovered = false;
+                        });
+                      },
+                      child: Text(
+                        "UI/UX Design",
+                        style: GoogleFonts.roboto(
+                          fontWeight: FontWeight.bold,
+                          color: _uiuxHovered ? Colors.grey : Colors.black,
+                          fontSize: 24,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const TextSpan(text: ", "),
+                  WidgetSpan(
+                    alignment: PlaceholderAlignment.middle,
+                    child: MouseRegion(
+                      onEnter: (_){
+                        setState(() {
+                          _threedDHovered = true;
+                        });
+                      },
+                      onExit: (_) {
+                        setState(() {
+                          _threedDHovered = false;
+                        });
+                      },
+                      child: Text(
+                        "3D Design",
+                        style: GoogleFonts.roboto(
+                          fontWeight: FontWeight.bold,
+                          color: _threedDHovered ? Colors.grey : Colors.black,
+                          fontSize: 24,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const TextSpan(text: ", "),
+                  WidgetSpan(
+                    alignment: PlaceholderAlignment.middle,
+                    child: MouseRegion(
+                      onEnter: (_){
+                        setState(() {
+                          _flutterHovered = true;
+                        });
+                      },
+                      onExit: (_) {
+                        setState(() {
+                          _flutterHovered = false;
+                        });
+                      },
+                      child: Text(
+                        "Cross-Platform App Development",
+                        style: GoogleFonts.roboto(
+                          fontWeight: FontWeight.bold,
+                          color: _flutterHovered ? Colors.grey : Colors.black,
+                          fontSize: 24,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const TextSpan(text: ". Highly skilled in leveraging emerging technologies to deliver innovative solutions. Eager to contribute technical expertise and passion for programming to a dynamic software development team")
+                  
+                ]
               ),
             ),
             const SizedBox(height: 100),

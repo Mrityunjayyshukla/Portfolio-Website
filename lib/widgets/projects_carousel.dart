@@ -1,41 +1,12 @@
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:infinite_carousel/infinite_carousel.dart';
-
-class ProjectsCarousel extends StatelessWidget {
-  final String projectImage;
-  final String projectTitle;
-  final InfiniteScrollController controller;
-  const ProjectsCarousel({super.key, required this.controller, required this.projectImage, required this.projectTitle});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 300,
-      child: InfiniteCarousel.builder(
-        controller: controller,
-        itemCount: 5,
-        itemExtent: 500,
-        velocityFactor: 0.1,
-        center: true,
-        anchor: 0,
-        physics: const BouncingScrollPhysics(),
-        itemBuilder: (context, index, realindex) {
-          return ProjectCard(
-            projectImage: projectImage,
-            projectTitle: projectTitle,
-          );
-        },
-      ),
-    );
-  }
-}
 
 class ProjectCard extends StatefulWidget {
   final String projectImage;
   final String projectTitle;
-  const ProjectCard({super.key, required this.projectImage, required this.projectTitle});
+  const ProjectCard(
+      {super.key, required this.projectImage, required this.projectTitle});
 
   @override
   State<ProjectCard> createState() => _ProjectCardState();
@@ -91,7 +62,7 @@ class _ProjectCardState extends State<ProjectCard> {
             ),
             Positioned(
               bottom: 20,
-              left: 10,
+              left: 20,
               child: _isCardHovered
                   ? Container(
                       padding: const EdgeInsets.symmetric(

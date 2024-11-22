@@ -39,10 +39,23 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                   fontWeight: FontWeight.w500, fontSize: 24, letterSpacing: 5),
             ),
             const SizedBox(height: 48),
-            ProjectsCarousel(
-              controller: _controllerProgramming,
-              projectImage: "images/projects/ThreeD-5.jpg",
-              projectTitle: "Hello World",
+            SizedBox(
+              height: 300,
+              child: InfiniteCarousel.builder(
+                controller: _controllerProgramming,
+                itemCount: 5,
+                itemExtent: 500,
+                velocityFactor: 0.1,
+                center: true,
+                anchor: 0,
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (context, index, realindex) {
+                  return const ProjectCard(
+                    projectImage: "images/projects/UX-2.png",
+                    projectTitle: "Marvel-Watch",
+                  );
+                },
+              ),
             ),
             const SizedBox(height: 24),
             Padding(

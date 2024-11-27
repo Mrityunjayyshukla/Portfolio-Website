@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/screens/about_section.dart';
 import 'package:portfolio/screens/achievements_section.dart';
 import 'package:portfolio/screens/projects_section.dart';
+import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/widgets/bottom_nav_bar.dart';
 import 'package:portfolio/screens/name_title.dart';
 import 'package:portfolio/widgets/contact_textfield.dart';
@@ -38,9 +39,16 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+    final isDesktop = Responsive.isDesktop(context);
 
+    return Scaffold(
+      drawer: !isDesktop
+          ? const SizedBox(
+              width: 250,
+              child: LeftPanel(),
+            )
+          : null,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(100),
         child: Padding(
@@ -133,15 +141,18 @@ class _HomePageState extends State<HomePage> {
       ),
 
       // Body
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const LeftPanel(),
-            _widgetOptions[_selectedIndex],
-            const SizedBox(width: 80),
-          ],
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              if (isDesktop) 
+                const LeftPanel(),
+              Center(child: _widgetOptions[_selectedIndex]),
+              // const SizedBox(width: 80),
+            ],
+          ),
         ),
       ),
 
@@ -318,7 +329,7 @@ class _HomePageState extends State<HomePage> {
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 200),
               curve: Curves.easeInOut,
-              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: (isDesktop) ? 24 : 16),
               decoration: BoxDecoration(
                 color: _fabHover
                     ? Theme.of(context).colorScheme.secondary
@@ -337,15 +348,22 @@ class _HomePageState extends State<HomePage> {
                 ],
                 borderRadius: BorderRadius.circular(40),
               ),
-              child: Text(
-                "Contact Me",
-                style: GoogleFonts.roboto(
-                  color: _fabHover
-                      ? Theme.of(context).colorScheme.primary
-                      : Theme.of(context).colorScheme.secondary,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              child: (isDesktop)
+               ? Text(
+                  "Contact Me",
+                  style: GoogleFonts.roboto(
+                    color: _fabHover
+                        ? Theme.of(context).colorScheme.primary
+                        : Theme.of(context).colorScheme.secondary,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              : Icon(
+                Icons.contact_mail,
+                color: _fabHover 
+                  ? Theme.of(context).colorScheme.primary
+                  : Theme.of(context).colorScheme.secondary,
+              )
             ),
           ),
         ),

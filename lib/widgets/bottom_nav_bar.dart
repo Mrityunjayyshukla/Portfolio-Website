@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:portfolio/utils/responsive.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -16,13 +17,19 @@ class _BottomNavBarState extends State<BottomNavBar> {
   bool _resumeHover = false;
   @override
   Widget build(BuildContext context) {
+    final isDesktop = Responsive.isDesktop(context);
+    final isTablet = Responsive.isTablet(context);
+    final isMobile = Responsive.isMobile(context);
     return LayoutBuilder(builder: (context, constraints) {
-      double padding = constraints.maxWidth * 0.38;
-
+      double padding = isMobile ? constraints.maxWidth * 0.1 : constraints.maxWidth * 0.32;
       return Padding(
-        padding: EdgeInsets.only(left: padding, right: padding, bottom: 24),
+        padding: EdgeInsets.only(
+          left: padding,
+          right: padding, 
+          bottom: 24,
+        ),
         child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 40),
+          padding: EdgeInsets.symmetric(vertical: 16, horizontal: (!isDesktop) ? 24 : 60),
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.primary,
             boxShadow: [
@@ -46,8 +53,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 onTap: () => widget.onItemTapped(0),
                 child: SvgPicture.asset(
                   "icons/home.svg",
-                  height: 32,
-                  width: 32,
+                  height: (isMobile) ? 28 : 32,
+                  width: (isMobile) ? 28 : 32,
                   colorFilter: ColorFilter.mode(
                     widget.selectedIndex == 0
                         ? Theme.of(context).colorScheme.secondary
@@ -60,8 +67,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 onTap: () => widget.onItemTapped(1),
                 child: SvgPicture.asset(
                   "icons/about.svg",
-                  height: 32,
-                  width: 32,
+                  height: (isMobile) ? 28 : 32,
+                  width: (isMobile) ? 28 : 32,
                   colorFilter: ColorFilter.mode(
                     widget.selectedIndex == 1
                         ? Theme.of(context).colorScheme.secondary
@@ -74,8 +81,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 onTap: () => widget.onItemTapped(2),
                 child: SvgPicture.asset(
                   "icons/projects.svg",
-                  height: 32,
-                  width: 32,
+                  height: (isMobile) ? 28 : 32,
+                  width: (isMobile) ? 28 : 32,
                   colorFilter: ColorFilter.mode(
                     widget.selectedIndex == 2
                         ? Theme.of(context).colorScheme.secondary
@@ -88,8 +95,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 onTap: () => widget.onItemTapped(3),
                 child: SvgPicture.asset(
                   "icons/experiences.svg",
-                  height: 32,
-                  width: 32,
+                  height: (isMobile) ? 28 : 32,
+                  width: (isMobile) ? 28 : 32,
                   colorFilter: ColorFilter.mode(
                     widget.selectedIndex == 3
                         ? Theme.of(context).colorScheme.secondary
@@ -119,8 +126,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   },
                   child: SvgPicture.asset(
                     "icons/resume.svg",
-                    height: 32,
-                    width: 32,
+                    height: (isMobile) ? 28 : 32,
+                    width: (isMobile) ? 28 : 32,
                     colorFilter: ColorFilter.mode(
                       _resumeHover
                           ? Theme.of(context).colorScheme.secondary

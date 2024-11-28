@@ -18,7 +18,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     final isDesktop = Responsive.isDesktop(context);
-    final isTablet = Responsive.isTablet(context);
     final isMobile = Responsive.isMobile(context);
     return LayoutBuilder(builder: (context, constraints) {
       double padding = isMobile ? constraints.maxWidth * 0.1 : constraints.maxWidth * 0.32;

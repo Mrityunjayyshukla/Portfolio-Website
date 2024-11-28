@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/screens/about_section.dart';
 import 'package:portfolio/screens/achievements_section.dart';
@@ -8,6 +9,7 @@ import 'package:portfolio/widgets/bottom_nav_bar.dart';
 import 'package:portfolio/screens/name_title.dart';
 import 'package:portfolio/widgets/contact_textfield.dart';
 import 'package:portfolio/widgets/left_panel.dart';
+import 'package:portfolio/widgets/neumorphism_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
@@ -40,28 +42,49 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final isDesktop = Responsive.isDesktop(context);
-
+    final isMobile = Responsive.isMobile(context);
     return Scaffold(
-      drawer: !isDesktop
-          ? const SizedBox(
-              width: 250,
-              child: LeftPanel(),
-            )
-          : null,
       backgroundColor: Theme.of(context).colorScheme.primary,
+
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(100),
         child: Padding(
           padding: const EdgeInsets.only(right: 36.0, left: 8),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              // if (!isDesktop) IconButton(
+              //     onPressed: (){
+              //       Scaffold.of(context).openDrawer();
+              //     },
+              //     icon: Icon(
+              //       Icons.menu,
+              //       size: (isMobile) ? 24 : 32,
+              //     ),
+              //   ) else const SizedBox.shrink(),
+              if (!isDesktop)
+                Builder(
+                  builder: (context) {
+                    return IconButton(
+                      onPressed: () {
+                        Scaffold.of(context).openDrawer();
+                      },
+                      icon: Icon(
+                        Icons.menu,
+                        size: (isMobile) ? 24 : 32,
+                      ),
+                    );
+                  },
+                )
+              else
+                const SizedBox.shrink(),
               Image.asset(
                 "assets/memoji.png",
-                height: 100,
-                width: 100,
+                height: (isMobile) ? 80 : 100,
+                width: (isMobile) ? 80 : 100,
               ),
+              const Spacer(),
               Row(
                 children: [
                   MouseRegion(
@@ -76,8 +99,9 @@ class _HomePageState extends State<HomePage> {
                       });
                     },
                     child: GestureDetector(
-                      onTap: (){
-                        const resumeLink = "https://drive.google.com/file/d/1Frtg9RPMcv24rWdtQUUR7zVcDjI_KASN/view?usp=drivesdk";
+                      onTap: () {
+                        const resumeLink =
+                            "https://drive.google.com/file/d/1Frtg9RPMcv24rWdtQUUR7zVcDjI_KASN/view?usp=drivesdk";
                         launchUrl(
                           Uri.parse(resumeLink),
                           mode: LaunchMode.inAppBrowserView,
@@ -90,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                         child: Text(
                           "Resume",
                           style: GoogleFonts.roboto(
-                            fontSize: 24,
+                            fontSize: (isMobile) ? 18 : 24,
                             fontWeight: FontWeight.w500,
                             color: Theme.of(context).colorScheme.secondary,
                           ),
@@ -112,11 +136,10 @@ class _HomePageState extends State<HomePage> {
                     },
                     child: GestureDetector(
                       onTap: () {
-                        const linkedInLink = "https://www.linkedin.com/in/mrityunjayyshukla";
-                        launchUrl(
-                          Uri.parse(linkedInLink),
-                          mode: LaunchMode.inAppBrowserView
-                        );
+                        const linkedInLink =
+                            "https://www.linkedin.com/in/mrityunjayyshukla";
+                        launchUrl(Uri.parse(linkedInLink),
+                            mode: LaunchMode.inAppBrowserView);
                       },
                       child: AnimatedScale(
                         scale: _isHovered2 ? 1.1 : 1,
@@ -125,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                         child: Text(
                           "LinkedIn",
                           style: GoogleFonts.roboto(
-                            fontSize: 24,
+                            fontSize: (isMobile) ? 18 : 24,
                             fontWeight: FontWeight.w500,
                             color: Theme.of(context).colorScheme.secondary,
                           ),
@@ -140,19 +163,50 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
 
-      // Body
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              if (isDesktop) 
-                const LeftPanel(),
-              Center(child: _widgetOptions[_selectedIndex]),
-              // const SizedBox(width: 80),
-            ],
+      drawer: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Drawer(
+            backgroundColor: Theme.of(context).colorScheme.primary,
+            child: ListView(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              children: <Widget>[
+                ListTile(
+                  onTap: () {
+                    launchUrl(
+                      Uri.parse("https://www.behance.net/mrityunjayshukla"),
+                      mode: LaunchMode.inAppBrowserView,
+                    );
+                  },
+                  leading: NeumorphismButton(
+                    child: SvgPicture.asset(
+                      "assets/icons/behance.svg",
+                      height: 32,
+                      width: 32,
+                    ),
+                    link: "https://www.behance.net/mrityunjayshukla",
+                  ),
+                  title: Text("Behance"),
+                )
+              ],
+            ),
           ),
+        ),
+      ),
+
+      // Body
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
+        child: Row(
+          mainAxisAlignment: isDesktop
+              ? MainAxisAlignment.spaceBetween
+              : MainAxisAlignment.center,
+          children: [
+            if (isDesktop) const LeftPanel(),
+            _widgetOptions[_selectedIndex],
+            if (isDesktop) const SizedBox(height: 80)
+          ],
         ),
       ),
 
@@ -327,44 +381,44 @@ class _HomePageState extends State<HomePage> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: AnimatedContainer(
-              duration: const Duration(milliseconds: 200),
-              curve: Curves.easeInOut,
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: (isDesktop) ? 24 : 16),
-              decoration: BoxDecoration(
-                color: _fabHover
-                    ? Theme.of(context).colorScheme.secondary
-                    : Theme.of(context).colorScheme.primary,
-                boxShadow: [
-                  BoxShadow(
-                    blurRadius: 24,
-                    color: Theme.of(context).colorScheme.shadow,
-                    offset: const Offset(10, 10),
-                  ),
-                  const BoxShadow(
-                    blurRadius: 24,
-                    color: Color(0xFFFFFFFF),
-                    offset: Offset(-10, -10),
-                  ),
-                ],
-                borderRadius: BorderRadius.circular(40),
-              ),
-              child: (isDesktop)
-               ? Text(
-                  "Contact Me",
-                  style: GoogleFonts.roboto(
-                    color: _fabHover
-                        ? Theme.of(context).colorScheme.primary
-                        : Theme.of(context).colorScheme.secondary,
-                    fontWeight: FontWeight.bold,
-                  ),
-                )
-              : Icon(
-                Icons.contact_mail,
-                color: _fabHover 
-                  ? Theme.of(context).colorScheme.primary
-                  : Theme.of(context).colorScheme.secondary,
-              )
-            ),
+                duration: const Duration(milliseconds: 200),
+                curve: Curves.easeInOut,
+                padding: EdgeInsets.symmetric(
+                    vertical: 16, horizontal: (isDesktop) ? 24 : 16),
+                decoration: BoxDecoration(
+                  color: _fabHover
+                      ? Theme.of(context).colorScheme.secondary
+                      : Theme.of(context).colorScheme.primary,
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 24,
+                      color: Theme.of(context).colorScheme.shadow,
+                      offset: const Offset(10, 10),
+                    ),
+                    const BoxShadow(
+                      blurRadius: 24,
+                      color: Color(0xFFFFFFFF),
+                      offset: Offset(-10, -10),
+                    ),
+                  ],
+                  borderRadius: BorderRadius.circular(40),
+                ),
+                child: (!isMobile)
+                    ? Text(
+                        "Contact Me",
+                        style: GoogleFonts.roboto(
+                          color: _fabHover
+                              ? Theme.of(context).colorScheme.primary
+                              : Theme.of(context).colorScheme.secondary,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    : Icon(
+                        Icons.contact_mail,
+                        color: _fabHover
+                            ? Theme.of(context).colorScheme.primary
+                            : Theme.of(context).colorScheme.secondary,
+                      )),
           ),
         ),
       ),

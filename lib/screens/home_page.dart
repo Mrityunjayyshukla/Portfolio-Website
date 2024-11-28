@@ -169,27 +169,97 @@ class _HomePageState extends State<HomePage> {
           borderRadius: BorderRadius.circular(16),
           child: Drawer(
             backgroundColor: Theme.of(context).colorScheme.primary,
-            child: ListView(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-              children: <Widget>[
-                ListTile(
-                  onTap: () {
-                    launchUrl(
-                      Uri.parse("https://www.behance.net/mrityunjayshukla"),
-                      mode: LaunchMode.inAppBrowserView,
-                    );
-                  },
-                  leading: NeumorphismButton(
-                    child: SvgPicture.asset(
-                      "assets/icons/behance.svg",
-                      height: 32,
-                      width: 32,
+            child: Center(
+              child: ListView(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                children: <Widget>[
+                  const SizedBox(height: 80),
+                  ListTile(
+                    title: Text(
+                      "Behance",
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
                     ),
-                    link: "https://www.behance.net/mrityunjayshukla",
+                    leading: NeumorphismButton(
+                        link: "https://www.behance.net/mrityunjayshukla",
+                        child: SvgPicture.asset(
+                          "assets/icons/behance.svg",
+                          height: 32,
+                          width: 32,
+                        )),
                   ),
-                  title: Text("Behance"),
-                )
-              ],
+                  const SizedBox(height: 24),
+                  ListTile(
+                    title: Text(
+                      "Artstation",
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    leading: NeumorphismButton(
+                        link: "https://www.artstation.com/mrityunjay_2003",
+                        child: SvgPicture.asset(
+                          "assets/icons/artstation.svg",
+                          height: 32,
+                          width: 32,
+                        )),
+                  ),
+                  const SizedBox(height: 24),
+                  ListTile(
+                    title: Text(
+                      "GitHub",
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    leading: NeumorphismButton(
+                        link: "https://github.com/Mrityunjayyshukla",
+                        child: SvgPicture.asset(
+                          "assets/icons/github.svg",
+                          height: 32,
+                          width: 32,
+                        )),
+                  ),
+                  const SizedBox(height: 24),
+                  ListTile(
+                    title: Text(
+                      "Twitter/X",
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    leading: NeumorphismButton(
+                        link: "https://x.com/mrityunjayys?t=oxt-BjNbsh8tgCbsdh2Nw&s=09",
+                        child: SvgPicture.asset(
+                          "assets/icons/twitter.svg",
+                          height: 32,
+                          width: 32,
+                        )),
+                  ),
+                  const SizedBox(height: 24),
+                  ListTile(
+                    title: Text(
+                      "LinkedIn",
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    leading: NeumorphismButton(
+                        link: "https://www.linkedin.com/in/mrityunjayyshukla",
+                        child: SvgPicture.asset(
+                          "assets/icons/linkedin.svg",
+                          height: 32,
+                          width: 32,
+                        )),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

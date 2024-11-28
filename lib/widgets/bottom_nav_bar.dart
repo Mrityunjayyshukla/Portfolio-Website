@@ -19,8 +19,16 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     final isDesktop = Responsive.isDesktop(context);
     final isMobile = Responsive.isMobile(context);
+    final isTablet = Responsive.isTablet(context);
     return LayoutBuilder(builder: (context, constraints) {
-      double padding = isMobile ? constraints.maxWidth * 0.1 : constraints.maxWidth * 0.32;
+      double padding;
+      if (isDesktop) {
+        padding = constraints.maxWidth * 0.3;
+      } else if (isTablet){
+        padding = constraints.maxWidth * 0.2;
+      } else {
+        padding = constraints.maxWidth * 0.1;
+      }
       return Padding(
         padding: EdgeInsets.only(
           left: padding,

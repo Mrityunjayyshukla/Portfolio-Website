@@ -9,6 +9,29 @@ class CenterPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMobile = Responsive.isMobile(context);
+    final isDesktop = Responsive.isDesktop(context);
+    final isTablet = Responsive.isTablet(context);
+    double titleSize;
+    double subtitleSize;
+    double carouselheight;
+    double carouselSize;
+
+    if (isDesktop) {
+      titleSize = 60;
+      subtitleSize = 32;
+      carouselSize = 48;
+      carouselheight = 90;
+    } else if (isTablet) {
+      titleSize = 46;
+      subtitleSize = 26;
+      carouselSize = 32;
+      carouselheight = 70;
+    } else {
+      titleSize = 32;
+      subtitleSize = 20;
+      carouselSize = 24;
+      carouselheight = 50;
+    }
     return SizedBox(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -17,7 +40,7 @@ class CenterPanel extends StatelessWidget {
             textAlign: TextAlign.center,
             "Mrityunjay Shukla".toUpperCase(),
             style: GoogleFonts.architectsDaughter(
-              fontSize: (isMobile) ? 32 : 60,
+              fontSize: titleSize,
               letterSpacing: (isMobile) ? 5 :10,
               fontWeight: FontWeight.w500,
               color: Theme.of(context).colorScheme.secondary,
@@ -28,7 +51,7 @@ class CenterPanel extends StatelessWidget {
             "and I'm a",
             style: GoogleFonts.roboto(
               fontWeight: FontWeight.w500,
-              fontSize: (isMobile) ? 20 : 32,
+              fontSize: subtitleSize,
               color: Theme.of(context).colorScheme.tertiary,
             ),
           ),
@@ -38,7 +61,7 @@ class CenterPanel extends StatelessWidget {
             child: CarouselSlider(
               options: CarouselOptions(
                 scrollDirection: Axis.vertical,
-                height: (isMobile) ? 50 : 90,
+                height: carouselheight,
                 initialPage: 0,
                 autoPlay: true,
                 autoPlayAnimationDuration: const Duration(milliseconds: 500),
@@ -50,7 +73,7 @@ class CenterPanel extends StatelessWidget {
                   "Flutter Developer",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.roboto(
-                    fontSize: (isMobile) ? 24:  48,
+                    fontSize: carouselSize,
                     color: Theme.of(context).colorScheme.secondary,
                     fontWeight: FontWeight.w500,
                   ),
@@ -59,7 +82,7 @@ class CenterPanel extends StatelessWidget {
                   "A.I. Enthusiast",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.roboto(
-                    fontSize: (isMobile) ? 24:  48,
+                    fontSize: carouselSize,
                     color: Theme.of(context).colorScheme.secondary,
                     fontWeight: FontWeight.w500,
                   ),
@@ -68,7 +91,7 @@ class CenterPanel extends StatelessWidget {
                   "UI/UX Designer",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.roboto(
-                    fontSize: (isMobile) ? 24:  48,
+                    fontSize: carouselSize,
                     color: Theme.of(context).colorScheme.secondary,
                     fontWeight: FontWeight.w500,
                   ),
@@ -77,7 +100,7 @@ class CenterPanel extends StatelessWidget {
                   "3D Designer",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.roboto(
-                    fontSize: (isMobile) ? 24:  48,
+                    fontSize: carouselSize,
                     color: Theme.of(context).colorScheme.secondary,
                     fontWeight: FontWeight.w500,
                   ),

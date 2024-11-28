@@ -43,6 +43,19 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final isDesktop = Responsive.isDesktop(context);
     final isMobile = Responsive.isMobile(context);
+    final isTablet = Responsive.isTablet(context);
+    double appBarOptionFontSize;
+    double memojiSize;
+    if (isDesktop) {
+      appBarOptionFontSize = 24;
+      memojiSize = 100;
+    } else if (isTablet) {
+      appBarOptionFontSize = 21;
+      memojiSize = 90;
+    } else {
+      appBarOptionFontSize = 18;
+      memojiSize = 80;
+    }
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.primary,
 
@@ -54,15 +67,6 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // if (!isDesktop) IconButton(
-              //     onPressed: (){
-              //       Scaffold.of(context).openDrawer();
-              //     },
-              //     icon: Icon(
-              //       Icons.menu,
-              //       size: (isMobile) ? 24 : 32,
-              //     ),
-              //   ) else const SizedBox.shrink(),
               if (!isDesktop)
                 Builder(
                   builder: (context) {
@@ -81,8 +85,8 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox.shrink(),
               Image.asset(
                 "assets/memoji.png",
-                height: (isMobile) ? 80 : 100,
-                width: (isMobile) ? 80 : 100,
+                height: memojiSize,
+                width: memojiSize
               ),
               const Spacer(),
               Row(
@@ -114,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                         child: Text(
                           "Resume",
                           style: GoogleFonts.roboto(
-                            fontSize: (isMobile) ? 18 : 24,
+                            fontSize: appBarOptionFontSize,
                             fontWeight: FontWeight.w500,
                             color: Theme.of(context).colorScheme.secondary,
                           ),
@@ -148,7 +152,7 @@ class _HomePageState extends State<HomePage> {
                         child: Text(
                           "LinkedIn",
                           style: GoogleFonts.roboto(
-                            fontSize: (isMobile) ? 18 : 24,
+                            fontSize: appBarOptionFontSize,
                             fontWeight: FontWeight.w500,
                             color: Theme.of(context).colorScheme.secondary,
                           ),

@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
               Image.asset(
                 "assets/memoji.png",
                 height: memojiSize,
-                width: memojiSize
+                width: memojiSize,
               ),
               const Spacer(),
               Row(
@@ -175,10 +175,18 @@ class _HomePageState extends State<HomePage> {
             backgroundColor: Theme.of(context).colorScheme.primary,
             child: Center(
               child: ListView(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                 children: <Widget>[
                   const SizedBox(height: 80),
                   ListTile(
+                    contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    onTap: () {
+                      launchUrl(
+                        Uri.parse("https://www.behance.net/mrityunjayshukla"),
+                        mode: LaunchMode.inAppBrowserView,
+                      );
+                    },
                     title: Text(
                       "Behance",
                       style: GoogleFonts.roboto(
@@ -187,15 +195,23 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     leading: NeumorphismButton(
-                        link: "https://www.behance.net/mrityunjayshukla",
-                        child: SvgPicture.asset(
-                          "assets/icons/behance.svg",
-                          height: 32,
-                          width: 32,
-                        )),
+                      link: "https://www.behance.net/mrityunjayshukla",
+                      child: SvgPicture.asset(
+                        "assets/icons/behance.svg",
+                        height: 32,
+                        width: 32,
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 24),
                   ListTile(
+                    contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    onTap: () {
+                      launchUrl(
+                        Uri.parse("https://www.artstation.com/mrityunjay_2003"),
+                        mode: LaunchMode.inAppBrowserView,
+                      );
+                    },
                     title: Text(
                       "Artstation",
                       style: GoogleFonts.roboto(
@@ -213,6 +229,13 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const SizedBox(height: 24),
                   ListTile(
+                    contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    onTap: () {
+                      launchUrl(
+                        Uri.parse("https://github.com/Mrityunjayyshukla"),
+                        mode: LaunchMode.inAppBrowserView,
+                      );
+                    },
                     title: Text(
                       "GitHub",
                       style: GoogleFonts.roboto(
@@ -230,6 +253,13 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const SizedBox(height: 24),
                   ListTile(
+                    contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    onTap: () {
+                      launchUrl(
+                        Uri.parse("https://x.com/mrityunjayys?t=oxt-BjNbsh8tgCbsdh2Nw&s=09"),
+                        mode: LaunchMode.inAppBrowserView,
+                      );
+                    },
                     title: Text(
                       "Twitter/X",
                       style: GoogleFonts.roboto(
@@ -238,7 +268,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     leading: NeumorphismButton(
-                        link: "https://x.com/mrityunjayys?t=oxt-BjNbsh8tgCbsdh2Nw&s=09",
+                        link:
+                            "https://x.com/mrityunjayys?t=oxt-BjNbsh8tgCbsdh2Nw&s=09",
                         child: SvgPicture.asset(
                           "assets/icons/twitter.svg",
                           height: 32,
@@ -247,6 +278,13 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const SizedBox(height: 24),
                   ListTile(
+                    contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    onTap: () {
+                      launchUrl(
+                        Uri.parse("https://www.linkedin.com/in/mrityunjayyshukla"),
+                        mode: LaunchMode.inAppBrowserView,
+                      );
+                    },
                     title: Text(
                       "LinkedIn",
                       style: GoogleFonts.roboto(
@@ -348,7 +386,7 @@ class _HomePageState extends State<HomePage> {
                               Text(
                                 "Let's connect,\nTell me about your\nproject",
                                 style: GoogleFonts.roboto(
-                                  fontSize: 48,
+                                  fontSize: 40,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -356,7 +394,7 @@ class _HomePageState extends State<HomePage> {
                               Text(
                                 "Let's create something together",
                                 style: GoogleFonts.roboto(
-                                  fontSize: 32,
+                                  fontSize: 28,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),

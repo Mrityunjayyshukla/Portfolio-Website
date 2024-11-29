@@ -25,10 +25,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       scrollBehavior: NoThumbScrollBehavior().copyWith(scrollbars: false),
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Portfolio Website',
       theme: lightMode,
       // darkTheme: darkMode,
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }

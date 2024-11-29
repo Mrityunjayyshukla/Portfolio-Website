@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/utils/responsive.dart';
 
 class ProjectCard extends StatefulWidget {
   final String projectImage;
@@ -16,6 +17,7 @@ class _ProjectCardState extends State<ProjectCard> {
   bool _isCardHovered = false;
   @override
   Widget build(BuildContext context) {
+    final isDesktop = Responsive.isDesktop(context);
     return MouseRegion(
       onEnter: (event) => setState(() {
         _isCardHovered = true;
@@ -49,7 +51,7 @@ class _ProjectCardState extends State<ProjectCard> {
               borderRadius: BorderRadius.circular(14),
               child: ColorFiltered(
                 colorFilter: ColorFilter.mode(
-                  _isCardHovered ? Colors.transparent : Colors.grey,
+                  (_isCardHovered || !isDesktop) ? Colors.transparent : Colors.grey,
                   BlendMode.saturation,
                 ),
                 child: Image.asset(
@@ -63,7 +65,7 @@ class _ProjectCardState extends State<ProjectCard> {
             Positioned(
               bottom: 20,
               left: 20,
-              child: _isCardHovered
+              child: (_isCardHovered || !isDesktop)
                   ? Container(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 24, vertical: 8),

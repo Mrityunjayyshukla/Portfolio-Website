@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
 import 'package:portfolio/data/projects_data.dart';
+import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/widgets/projects_carousel.dart';
 
 class ProjectsSection extends StatefulWidget {
@@ -19,10 +20,11 @@ class _ProjectsSectionState extends State<ProjectsSection> {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = Responsive.isMobile(context);
     return SingleChildScrollView(
       child: ConstrainedBox(
         constraints: BoxConstraints(
-          maxWidth: MediaQuery.of(context).size.width / 1.28,
+          maxWidth: MediaQuery.of(context).size.width / 1.25,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -40,11 +42,11 @@ class _ProjectsSectionState extends State<ProjectsSection> {
             ),
             const SizedBox(height: 48),
             SizedBox(
-              height: 300,
+              height: isMobile ? 240 : 300,
               child: InfiniteCarousel.builder(
                 controller: _controllerProgramming,
                 itemCount: programmingData.length,
-                itemExtent: 500,
+                itemExtent: isMobile ? 390 : 500,
                 velocityFactor: 0.1,
                 center: true,
                 anchor: 0,
@@ -88,11 +90,11 @@ class _ProjectsSectionState extends State<ProjectsSection> {
             ),
             const SizedBox(height: 48),
             SizedBox(
-              height: 300,
+              height: isMobile ? 240 : 300,
               child: InfiniteCarousel.builder(
                 controller: _controllerUIUX,
                 itemCount: uxProjectData.length,
-                itemExtent: 500,
+                itemExtent: isMobile ? 390 : 500,
                 velocityFactor: 0.1,
                 center: true,
                 anchor: 0,
@@ -136,11 +138,11 @@ class _ProjectsSectionState extends State<ProjectsSection> {
             ),
             const SizedBox(height: 48),
             SizedBox(
-              height: 300,
+              height: isMobile ? 240 : 300,
               child: InfiniteCarousel.builder(
                 controller: _controller3D,
                 itemCount: 5,
-                itemExtent: 500,
+                itemExtent: isMobile ? 390 : 500,
                 velocityFactor: 0.1,
                 center: true,
                 anchor: 0,

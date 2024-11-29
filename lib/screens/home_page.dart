@@ -375,114 +375,86 @@ class _HomePageState extends State<HomePage> {
                   width: MediaQuery.of(context).size.width / 1.5,
                   child: SingleChildScrollView(
                     physics: const NeverScrollableScrollPhysics(),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Let's connect,\nTell me about your\nproject",
-                                style: GoogleFonts.roboto(
-                                  fontSize: 40,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                    child: Expanded(
+                        flex: 1,
+                        child: Column(
+                          children: [
+                            Text(
+                              "Send us a message",
+                              style: GoogleFonts.roboto(
+                                fontSize: 32,
+                                fontWeight: FontWeight.w500,
                               ),
-                              const SizedBox(height: 16),
-                              Text(
-                                "Let's create something together",
-                                style: GoogleFonts.roboto(
-                                  fontSize: 28,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                            ),
+                            const SizedBox(height: 32),
+                            const ContactTextfield(
+                                hintText: "Enter Full Name"),
+                            const SizedBox(height: 16),
+                            const ContactTextfield(
+                                hintText: "Email Address"),
+                            const SizedBox(height: 16),
+                            const ContactTextfield(hintText: "Subject"),
+                            const SizedBox(height: 16),
+                            Text(
+                              "Tell me about your project",
+                              style: GoogleFonts.roboto(
+                                fontSize: 24,
+                                fontWeight: FontWeight.w500,
                               ),
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                            flex: 1,
-                            child: Column(
-                              children: [
-                                Text(
-                                  "Send us a message",
-                                  style: GoogleFonts.roboto(
-                                    fontSize: 32,
+                            ),
+                            const SizedBox(height: 16),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16, vertical: 16),
+                              decoration: BoxDecoration(
+                                color:
+                                    Theme.of(context).colorScheme.primary,
+                                border: Border.all(
+                                    width: 2,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .secondary),
+                                borderRadius: BorderRadius.circular(24),
+                              ),
+                              child: TextField(
+                                cursorColor:
+                                    Theme.of(context).colorScheme.secondary,
+                                maxLines: 10,
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: "Enter your Message",
+                                  hintStyle: GoogleFonts.roboto(
+                                    color: Colors.grey,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                                const SizedBox(height: 32),
-                                const ContactTextfield(
-                                    hintText: "Enter Full Name"),
-                                const SizedBox(height: 16),
-                                const ContactTextfield(
-                                    hintText: "Email Address"),
-                                const SizedBox(height: 16),
-                                const ContactTextfield(hintText: "Subject"),
-                                const SizedBox(height: 16),
-                                Text(
-                                  "Tell me about your project",
+                              ),
+                            ),
+                            const SizedBox(height: 16),
+                            GestureDetector(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16),
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .secondary,
+                                ),
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 8, horizontal: 24),
+                                child: Text(
+                                  "Submit",
                                   style: GoogleFonts.roboto(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w500,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .primary,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                const SizedBox(height: 16),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 16, vertical: 16),
-                                  decoration: BoxDecoration(
-                                    color:
-                                        Theme.of(context).colorScheme.primary,
-                                    border: Border.all(
-                                        width: 2,
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .secondary),
-                                    borderRadius: BorderRadius.circular(24),
-                                  ),
-                                  child: TextField(
-                                    cursorColor:
-                                        Theme.of(context).colorScheme.secondary,
-                                    maxLines: 10,
-                                    decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      hintText: "Enter your Message",
-                                      hintStyle: GoogleFonts.roboto(
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(height: 16),
-                                GestureDetector(
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(16),
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                    ),
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 8, horizontal: 24),
-                                    child: Text(
-                                      "Submit",
-                                      style: GoogleFonts.roboto(
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .primary,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ))
-                      ],
-                    ),
+                              ),
+                            )
+                          ],
+                        )),
                   ),
                 ),
 

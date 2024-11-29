@@ -453,18 +453,108 @@ class _SingleSideTimelineState extends State<SingleSideTimeline> {
           ),
         ),
         TimelineTile(
-        beforeLineStyle: LineStyle(
-          color: Theme.of(context).colorScheme.secondary,
-        ),
-        alignment: TimelineAlign.center,
-        isLast: true,
-        indicatorStyle: IndicatorStyle(
+          beforeLineStyle: LineStyle(
+            color: Theme.of(context).colorScheme.secondary,
+          ),
+          alignment: TimelineAlign.center,
+          isLast: true,
+          indicatorStyle: IndicatorStyle(
             indicator: SvgPicture.asset(
-          "icons/up_arrow.svg",
-          height: 24,
-          width: 24,
-        )),
-      ),
+              "icons/up_arrow.svg",
+              height: 24,
+              width: 24,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class EducationSingleSideTimeline extends StatefulWidget {
+  const EducationSingleSideTimeline({super.key});
+
+  @override
+  State<EducationSingleSideTimeline> createState() =>
+      _EducationSingleSideTimelineState();
+}
+
+class _EducationSingleSideTimelineState
+    extends State<EducationSingleSideTimeline> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        TimelineTile(
+          afterLineStyle: LineStyle(
+            color: Theme.of(context).colorScheme.secondary,
+          ),
+          indicatorStyle: IndicatorStyle(
+              indicator: SvgPicture.asset(
+            "icons/down_arrow.svg",
+            height: 24,
+            width: 24,
+          )),
+          alignment: TimelineAlign.center,
+          isFirst: true,
+        ),
+        TimelineCard(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                textAlign: TextAlign.center,
+                educationData[0].title,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                textAlign: TextAlign.center,
+                educationData[0].institution,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                textAlign: TextAlign.center,
+                educationData[0].time,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                textAlign: TextAlign.center,
+                educationData[0].description,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 16,
+                ),
+              ),
+            ],
+          ),
+        ),
+        TimelineTile(
+          beforeLineStyle: LineStyle(
+            color: Theme.of(context).colorScheme.secondary,
+          ),
+          alignment: TimelineAlign.center,
+          isLast: true,
+          indicatorStyle: IndicatorStyle(
+            indicator: SvgPicture.asset(
+              "icons/up_arrow.svg",
+              height: 24,
+              width: 24,
+            ),
+          ),
+        ),
       ],
     );
   }

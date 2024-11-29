@@ -65,7 +65,7 @@ class _CertificateCardState extends State<CertificateCard> {
             ],
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Stack(
@@ -73,7 +73,7 @@ class _CertificateCardState extends State<CertificateCard> {
                   Container(
                     height: 120,
                     decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
+                      color: Theme.of(context).colorScheme.primary,
                       borderRadius: BorderRadius.circular(16),
                     ),
                   ),

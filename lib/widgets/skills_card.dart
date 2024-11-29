@@ -29,7 +29,7 @@ class _SkillsCardState extends State<SkillsCard> {
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 80),
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
           border: Border.all(color: const Color.fromARGB(255, 209, 209, 209), width: 0.5),
           color: Theme.of(context).colorScheme.primary,

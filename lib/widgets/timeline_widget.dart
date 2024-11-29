@@ -25,141 +25,133 @@ class TimelineCustomWidget extends StatelessWidget {
         alignment: TimelineAlign.center,
         isFirst: true,
       ),
-      SizedBox(
-        height: 300,
-        child: TimelineTile(
-          beforeLineStyle: LineStyle(
-            color: Theme.of(context).colorScheme.secondary,
-          ),
-          afterLineStyle: LineStyle(
-            color: Theme.of(context).colorScheme.secondary,
-          ),
-          alignment: TimelineAlign.center,
-          isFirst: false,
-          indicatorStyle: IndicatorStyle(
-            color: Theme.of(context).colorScheme.secondary,
-          ),
-          startChild: TimelineCard(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  experienceData[0].title,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
+      TimelineTile(
+        beforeLineStyle: LineStyle(
+          color: Theme.of(context).colorScheme.secondary,
+        ),
+        afterLineStyle: LineStyle(
+          color: Theme.of(context).colorScheme.secondary,
+        ),
+        alignment: TimelineAlign.center,
+        isFirst: false,
+        indicatorStyle: IndicatorStyle(
+          color: Theme.of(context).colorScheme.secondary,
+        ),
+        startChild: TimelineCard(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                experienceData[0].title,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  experienceData[0].time,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16,
-                  ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                experienceData[0].time,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  experienceData[0].description,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.normal,
-                    fontSize: 16,
-                  ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                experienceData[0].description,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 16,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
-      SizedBox(
-        height: 264,
-        child: TimelineTile(
-          beforeLineStyle: LineStyle(
-            color: Theme.of(context).colorScheme.secondary,
-          ),
-          afterLineStyle: LineStyle(
-            color: Theme.of(context).colorScheme.secondary,
-          ),
-          alignment: TimelineAlign.center,
-          isFirst: false,
-          indicatorStyle: IndicatorStyle(
-            color: Theme.of(context).colorScheme.secondary,
-          ),
-          endChild: TimelineCard(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  experienceData[1].title,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
+      TimelineTile(
+        beforeLineStyle: LineStyle(
+          color: Theme.of(context).colorScheme.secondary,
+        ),
+        afterLineStyle: LineStyle(
+          color: Theme.of(context).colorScheme.secondary,
+        ),
+        alignment: TimelineAlign.center,
+        isFirst: false,
+        indicatorStyle: IndicatorStyle(
+          color: Theme.of(context).colorScheme.secondary,
+        ),
+        endChild: TimelineCard(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                experienceData[1].title,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  experienceData[1].time,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16,
-                  ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                experienceData[1].time,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  experienceData[1].description,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.normal,
-                    fontSize: 16,
-                  ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                experienceData[1].description,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 16,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
-      SizedBox(
-        height: 264,
-        child: TimelineTile(
-          beforeLineStyle: LineStyle(
-            color: Theme.of(context).colorScheme.secondary,
-          ),
-          afterLineStyle: LineStyle(
-            color: Theme.of(context).colorScheme.secondary,
-          ),
-          alignment: TimelineAlign.center,
-          isFirst: false,
-          indicatorStyle: IndicatorStyle(
-            color: Theme.of(context).colorScheme.secondary,
-          ),
-          startChild: TimelineCard(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  experienceData[2].title,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
+      TimelineTile(
+        beforeLineStyle: LineStyle(
+          color: Theme.of(context).colorScheme.secondary,
+        ),
+        afterLineStyle: LineStyle(
+          color: Theme.of(context).colorScheme.secondary,
+        ),
+        alignment: TimelineAlign.center,
+        isFirst: false,
+        indicatorStyle: IndicatorStyle(
+          color: Theme.of(context).colorScheme.secondary,
+        ),
+        startChild: TimelineCard(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                experienceData[2].title,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  experienceData[2].time,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16,
-                  ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                experienceData[2].time,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  experienceData[2].description,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.normal,
-                    fontSize: 16,
-                  ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                experienceData[2].description,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 16,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -199,58 +191,55 @@ class EducationCustomWidget extends StatelessWidget {
         alignment: TimelineAlign.center,
         isFirst: true,
       ),
-      SizedBox(
-        height: 155,
-        child: TimelineTile(
-          beforeLineStyle: LineStyle(
-            color: Theme.of(context).colorScheme.secondary,
-          ),
-          afterLineStyle: LineStyle(
-            color: Theme.of(context).colorScheme.secondary,
-          ),
-          alignment: TimelineAlign.center,
-          isFirst: false,
-          indicatorStyle: IndicatorStyle(
-            color: Theme.of(context).colorScheme.secondary,
-          ),
-          startChild: TimelineCard(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  educationData[0].title,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
+      TimelineTile(
+        beforeLineStyle: LineStyle(
+          color: Theme.of(context).colorScheme.secondary,
+        ),
+        afterLineStyle: LineStyle(
+          color: Theme.of(context).colorScheme.secondary,
+        ),
+        alignment: TimelineAlign.center,
+        isFirst: false,
+        indicatorStyle: IndicatorStyle(
+          color: Theme.of(context).colorScheme.secondary,
+        ),
+        startChild: TimelineCard(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                educationData[0].title,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  educationData[0].institution,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16,
-                  ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                educationData[0].institution,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  educationData[0].time,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16,
-                    fontStyle: FontStyle.italic,
-                  ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                educationData[0].time,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                  fontStyle: FontStyle.italic,
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  educationData[0].description,
-                  style: GoogleFonts.roboto(
-                    fontWeight: FontWeight.normal,
-                    fontSize: 16,
-                  ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                educationData[0].description,
+                style: GoogleFonts.roboto(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 16,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

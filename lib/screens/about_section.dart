@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/data/skills_data.dart';
+import 'package:portfolio/utils/responsive.dart';
 import 'package:portfolio/widgets/skills_card.dart';
 import 'package:portfolio/widgets/timeline_widget.dart';
 
@@ -20,6 +21,22 @@ class _AboutSectionState extends State<AboutSection> {
 
   @override
   Widget build(BuildContext context) {
+    final isDesktop = Responsive.isDesktop(context);
+    final isTablet = Responsive.isTablet(context);
+    int gridRowCount;
+    double gridHeight;
+
+    if (isDesktop){
+      gridRowCount = 6;
+      gridHeight = 424;
+    } else if (isTablet) {
+      gridRowCount = 4;
+      gridHeight = 792;
+    } else {
+      gridRowCount = 2;
+      gridHeight = 1400;
+    }
+    
     return SingleChildScrollView(
       physics: const ScrollPhysics(),
       child: ConstrainedBox(
@@ -36,6 +53,7 @@ class _AboutSectionState extends State<AboutSection> {
             ),
             const SizedBox(height: 48),
             RichText(
+              textAlign: TextAlign.center,
               text: TextSpan(
                 style: GoogleFonts.roboto(
                   fontSize: 24, color: Colors.black,
@@ -56,7 +74,7 @@ class _AboutSectionState extends State<AboutSection> {
                         });
                       },
                       child: Text(
-                        "Python Programming",
+                        "Python Programming,",
                         style: GoogleFonts.roboto(
                           fontWeight: FontWeight.bold,
                           color: _pythonHovered ? Colors.grey : Colors.black,
@@ -65,7 +83,6 @@ class _AboutSectionState extends State<AboutSection> {
                       ),
                     ),
                   ),
-                  const TextSpan(text: ", "),
                   WidgetSpan(
                     alignment: PlaceholderAlignment.middle,
                     child: MouseRegion(
@@ -80,7 +97,7 @@ class _AboutSectionState extends State<AboutSection> {
                         });
                       },
                       child: Text(
-                        "UI/UX Design",
+                        " UI/UX Design,",
                         style: GoogleFonts.roboto(
                           fontWeight: FontWeight.bold,
                           color: _uiuxHovered ? Colors.grey : Colors.black,
@@ -89,7 +106,6 @@ class _AboutSectionState extends State<AboutSection> {
                       ),
                     ),
                   ),
-                  const TextSpan(text: ", "),
                   WidgetSpan(
                     alignment: PlaceholderAlignment.middle,
                     child: MouseRegion(
@@ -104,7 +120,7 @@ class _AboutSectionState extends State<AboutSection> {
                         });
                       },
                       child: Text(
-                        "3D Design",
+                        " 3D Design,",
                         style: GoogleFonts.roboto(
                           fontWeight: FontWeight.bold,
                           color: _threedDHovered ? Colors.grey : Colors.black,
@@ -113,7 +129,6 @@ class _AboutSectionState extends State<AboutSection> {
                       ),
                     ),
                   ),
-                  const TextSpan(text: ", "),
                   WidgetSpan(
                     alignment: PlaceholderAlignment.middle,
                     child: MouseRegion(
@@ -128,7 +143,7 @@ class _AboutSectionState extends State<AboutSection> {
                         });
                       },
                       child: Text(
-                        "Cross-Platform App Development",
+                        " Cross-Platform App Development.",
                         style: GoogleFonts.roboto(
                           fontWeight: FontWeight.bold,
                           color: _flutterHovered ? Colors.grey : Colors.black,
@@ -137,7 +152,7 @@ class _AboutSectionState extends State<AboutSection> {
                       ),
                     ),
                   ),
-                  const TextSpan(text: ". Highly skilled in leveraging emerging technologies to deliver innovative solutions. Eager to contribute technical expertise and passion for programming to a dynamic software development team")
+                  const TextSpan(text: " Highly skilled in leveraging emerging technologies to deliver innovative solutions. Eager to contribute technical expertise and passion for programming to a dynamic software development team.")
                   
                 ]
               ),
@@ -149,46 +164,23 @@ class _AboutSectionState extends State<AboutSection> {
                   fontWeight: FontWeight.bold, fontSize: 32, letterSpacing: 5),
             ),
             const SizedBox(height: 48),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                for (int i = 0; i < skillsList1.length; i++)
-                  Row(
-                    children: [
-                      const SizedBox(width: 20),
-                      SkillsCard(imageFileName: skillsList1[i]),
-                      const SizedBox(width: 20),
-                    ],
-                  )
-              ],
-            ),
-            const SizedBox(height: 40),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                for (int i = 0; i < skillsList2.length; i++)
-                  Row(
-                    children: [
-                      const SizedBox(width: 20),
-                      SkillsCard(imageFileName: skillsList2[i]),
-                      const SizedBox(width: 20),
-                    ],
-                  )
-              ],
-            ),
-            const SizedBox(height: 40),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                for (int i = 0; i < skillsList3.length; i++)
-                  Row(
-                    children: [
-                      const SizedBox(width: 20),
-                      SkillsCard(imageFileName: skillsList3[i]),
-                      const SizedBox(width: 20),
-                    ],
-                  )
-              ],
+            SizedBox(
+              // (mainAxisExtent * (length/gridRowCount)) + (mainAxisSpacing * (length/gridRowCount + 1))
+              height: gridHeight,
+              child: GridView.builder(
+                  padding: const EdgeInsets.symmetric(horizontal: 32),
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: skillsList.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: gridRowCount,
+                    crossAxisSpacing: 32,
+                    mainAxisSpacing: 32,
+                    mainAxisExtent: 120,
+                  ),
+                  itemBuilder: (context, index) {
+                    return SkillsCard(imageFileName: skillsList[index]);
+                  }),
             ),
             const SizedBox(height: 100),
             Text(
@@ -196,14 +188,14 @@ class _AboutSectionState extends State<AboutSection> {
               style: GoogleFonts.roboto(
                   fontWeight: FontWeight.bold, fontSize: 32, letterSpacing: 5),
             ),
-            const TimelineCustomWidget(),
+            isDesktop ? const TimelineCustomWidget() : const SingleSideTimeline(),
             const SizedBox(height: 100),
             Text(
               "Education".toUpperCase(),
               style: GoogleFonts.roboto(
                   fontWeight: FontWeight.bold, fontSize: 32, letterSpacing: 5),
             ),
-            const EducationCustomWidget(),
+            isDesktop ? const EducationCustomWidget() : const EducationSingleSideTimeline(),
           ],
         ),
       ),

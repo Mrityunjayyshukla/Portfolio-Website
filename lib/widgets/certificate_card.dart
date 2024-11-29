@@ -44,7 +44,7 @@ class _CertificateCardState extends State<CertificateCard> {
         },
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 80),
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.primary,
             borderRadius: BorderRadius.circular(16),
@@ -65,7 +65,8 @@ class _CertificateCardState extends State<CertificateCard> {
             ],
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Stack(
                 children: [
@@ -101,8 +102,9 @@ class _CertificateCardState extends State<CertificateCard> {
                 ],
               ),
               const SizedBox(height: 8),
-              Row(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     widget.title,

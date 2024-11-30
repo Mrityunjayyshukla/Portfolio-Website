@@ -1,4 +1,6 @@
+import 'package:emailjs/emailjs.dart' as emailjs;
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/screens/about_section.dart';
@@ -36,6 +38,12 @@ class _HomePageState extends State<HomePage> {
       _selectedIndex = index;
     });
   }
+
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController subjectController = TextEditingController();
+  TextEditingController messageController = TextEditingController();
+
 
   bool _fabHover = false;
 
@@ -375,86 +383,91 @@ class _HomePageState extends State<HomePage> {
                   width: MediaQuery.of(context).size.width / 1.5,
                   child: SingleChildScrollView(
                     physics: const NeverScrollableScrollPhysics(),
-                    child: Expanded(
-                        flex: 1,
-                        child: Column(
-                          children: [
-                            Text(
-                              "Send us a message",
-                              style: GoogleFonts.roboto(
-                                fontSize: 32,
+                    child: Column(
+                      children: [
+                        Text(
+                          "Send us a message",
+                          style: GoogleFonts.roboto(
+                            fontSize: 32,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const SizedBox(height: 32),
+                        ContactTextfield(
+                          controller: nameController,
+                            hintText: "Enter Full Name"),
+                        const SizedBox(height: 16),
+                        ContactTextfield(
+                          controller: emailController,
+                            hintText: "Email Address"),
+                        const SizedBox(height: 16),
+                        ContactTextfield(
+                          controller: subjectController,
+                          hintText: "Subject",
+                        ),
+                        const SizedBox(height: 16),
+                        Text(
+                          "Tell me about your project",
+                          style: GoogleFonts.roboto(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 16),
+                          decoration: BoxDecoration(
+                            color:
+                                Theme.of(context).colorScheme.primary,
+                            border: Border.all(
+                                width: 2,
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .secondary),
+                            borderRadius: BorderRadius.circular(24),
+                          ),
+                          child: TextField(
+                            controller: messageController,
+                            cursorColor:
+                                Theme.of(context).colorScheme.secondary,
+                            maxLines: 10,
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Enter your Message",
+                              hintStyle: GoogleFonts.roboto(
+                                color: Colors.grey,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            const SizedBox(height: 32),
-                            const ContactTextfield(
-                                hintText: "Enter Full Name"),
-                            const SizedBox(height: 16),
-                            const ContactTextfield(
-                                hintText: "Email Address"),
-                            const SizedBox(height: 16),
-                            const ContactTextfield(hintText: "Subject"),
-                            const SizedBox(height: 16),
-                            Text(
-                              "Tell me about your project",
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        GestureDetector(
+                          onTap: _sendEmail,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16),
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .secondary,
+                            ),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 8, horizontal: 24),
+                            child: Text(
+                              "Submit",
                               style: GoogleFonts.roboto(
-                                fontSize: 24,
-                                fontWeight: FontWeight.w500,
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .primary,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const SizedBox(height: 16),
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 16, vertical: 16),
-                              decoration: BoxDecoration(
-                                color:
-                                    Theme.of(context).colorScheme.primary,
-                                border: Border.all(
-                                    width: 2,
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .secondary),
-                                borderRadius: BorderRadius.circular(24),
-                              ),
-                              child: TextField(
-                                cursorColor:
-                                    Theme.of(context).colorScheme.secondary,
-                                maxLines: 10,
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  hintText: "Enter your Message",
-                                  hintStyle: GoogleFonts.roboto(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 16),
-                            GestureDetector(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16),
-                                  color: Theme.of(context)
-                                      .colorScheme
-                                      .secondary,
-                                ),
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 8, horizontal: 24),
-                                child: Text(
-                                  "Submit",
-                                  style: GoogleFonts.roboto(
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .primary,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            )
-                          ],
-                        )),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
 
@@ -507,5 +520,53 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+
+  void _sendEmail() async {
+    try {
+
+      final publicKey = dotenv.env['PUBLIC_KEY'];
+      final privateKey = dotenv.env['PRIVATE_KEY'];
+      final serviceId = dotenv.env['SERVICE_ID'];
+      final templateId = dotenv.env['TEMPLATE_ID'];
+
+      // Collect the values entered in the text fields
+      final name = nameController.text.trim();
+      final email = emailController.text.trim();
+      final subject = subjectController.text.trim();
+      final message = messageController.text.trim();
+
+      await emailjs.send(
+        serviceId!,
+        templateId!,
+        {
+          'from_name': name,  // Use name from the controller
+          'user_email': email,  // Use email from the controller
+          'user_subject': subject,  // Use subject from the controller
+          'message': message,  // Use message from the controller
+          'to_name': "Mrityunjay Shukla",
+        },
+        emailjs.Options(
+            publicKey: publicKey,
+            privateKey: privateKey,
+            limitRate: const emailjs.LimitRate(
+              id: 'app',
+              throttle: 10000,
+            )),
+      );
+
+      // After successfully sending the email, clear the text fields
+      nameController.clear();
+      emailController.clear();
+      subjectController.clear();
+      messageController.clear();
+
+      print('SUCCESS!');
+    } catch (error) {
+      if (error is emailjs.EmailJSResponseStatus) {
+        print('ERROR... $error');
+      }
+      print(error.toString());
+    }
   }
 }

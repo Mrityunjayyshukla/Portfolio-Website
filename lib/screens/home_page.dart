@@ -44,7 +44,6 @@ class _HomePageState extends State<HomePage> {
   TextEditingController subjectController = TextEditingController();
   TextEditingController messageController = TextEditingController();
 
-
   bool _fabHover = false;
 
   @override
@@ -188,7 +187,8 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   const SizedBox(height: 80),
                   ListTile(
-                    contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    contentPadding:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                     onTap: () {
                       launchUrl(
                         Uri.parse("https://www.behance.net/mrityunjayshukla"),
@@ -213,7 +213,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const SizedBox(height: 24),
                   ListTile(
-                    contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    contentPadding:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                     onTap: () {
                       launchUrl(
                         Uri.parse("https://www.artstation.com/mrityunjay_2003"),
@@ -237,7 +238,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const SizedBox(height: 24),
                   ListTile(
-                    contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    contentPadding:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                     onTap: () {
                       launchUrl(
                         Uri.parse("https://github.com/Mrityunjayyshukla"),
@@ -261,10 +263,12 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const SizedBox(height: 24),
                   ListTile(
-                    contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    contentPadding:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                     onTap: () {
                       launchUrl(
-                        Uri.parse("https://x.com/mrityunjayys?t=oxt-BjNbsh8tgCbsdh2Nw&s=09"),
+                        Uri.parse(
+                            "https://x.com/mrityunjayys?t=oxt-BjNbsh8tgCbsdh2Nw&s=09"),
                         mode: LaunchMode.inAppBrowserView,
                       );
                     },
@@ -286,10 +290,12 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const SizedBox(height: 24),
                   ListTile(
-                    contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    contentPadding:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                     onTap: () {
                       launchUrl(
-                        Uri.parse("https://www.linkedin.com/in/mrityunjayyshukla"),
+                        Uri.parse(
+                            "https://www.linkedin.com/in/mrityunjayyshukla"),
                         mode: LaunchMode.inAppBrowserView,
                       );
                     },
@@ -394,11 +400,11 @@ class _HomePageState extends State<HomePage> {
                         ),
                         const SizedBox(height: 32),
                         ContactTextfield(
-                          controller: nameController,
+                            controller: nameController,
                             hintText: "Enter Full Name"),
                         const SizedBox(height: 16),
                         ContactTextfield(
-                          controller: emailController,
+                            controller: emailController,
                             hintText: "Email Address"),
                         const SizedBox(height: 16),
                         ContactTextfield(
@@ -418,13 +424,10 @@ class _HomePageState extends State<HomePage> {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 16, vertical: 16),
                           decoration: BoxDecoration(
-                            color:
-                                Theme.of(context).colorScheme.primary,
+                            color: Theme.of(context).colorScheme.primary,
                             border: Border.all(
                                 width: 2,
-                                color: Theme.of(context)
-                                    .colorScheme
-                                    .secondary),
+                                color: Theme.of(context).colorScheme.secondary),
                             borderRadius: BorderRadius.circular(24),
                           ),
                           child: TextField(
@@ -448,18 +451,14 @@ class _HomePageState extends State<HomePage> {
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(16),
-                              color: Theme.of(context)
-                                  .colorScheme
-                                  .secondary,
+                              color: Theme.of(context).colorScheme.secondary,
                             ),
                             padding: const EdgeInsets.symmetric(
                                 vertical: 8, horizontal: 24),
                             child: Text(
                               "Submit",
                               style: GoogleFonts.roboto(
-                                color: Theme.of(context)
-                                    .colorScheme
-                                    .primary,
+                                color: Theme.of(context).colorScheme.primary,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -524,7 +523,6 @@ class _HomePageState extends State<HomePage> {
 
   void _sendEmail() async {
     try {
-
       final publicKey = dotenv.env['PUBLIC_KEY'];
       final privateKey = dotenv.env['PRIVATE_KEY'];
       final serviceId = dotenv.env['SERVICE_ID'];
@@ -540,10 +538,10 @@ class _HomePageState extends State<HomePage> {
         serviceId!,
         templateId!,
         {
-          'from_name': name,  // Use name from the controller
-          'user_email': email,  // Use email from the controller
-          'user_subject': subject,  // Use subject from the controller
-          'message': message,  // Use message from the controller
+          'from_name': name, // Use name from the controller
+          'user_email': email, // Use email from the controller
+          'user_subject': subject, // Use subject from the controller
+          'message': message, // Use message from the controller
           'to_name': "Mrityunjay Shukla",
         },
         emailjs.Options(
@@ -561,10 +559,26 @@ class _HomePageState extends State<HomePage> {
       subjectController.clear();
       messageController.clear();
 
+      // Show success snackbar
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Email sent successfully!'),
+          duration: Duration(seconds: 3),
+        ),
+      );
+      Navigator.pop(context);
+
       print('SUCCESS!');
     } catch (error) {
       if (error is emailjs.EmailJSResponseStatus) {
         print('ERROR... $error');
+        // Show error snackbar
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Failed to send email. Please try again.'),
+            duration: Duration(seconds: 3),
+          ),
+        );
       }
       print(error.toString());
     }

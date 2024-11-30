@@ -1,9 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:portfolio/screens/home_page.dart';
 import 'package:portfolio/utils/color_palette.dart';
 
-void main() {
+void main()async {
+  await dotenv.load();
   runApp(const MyApp());
 }
 

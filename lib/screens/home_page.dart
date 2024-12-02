@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:emailjs/emailjs.dart' as emailjs;
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -568,10 +570,10 @@ class _HomePageState extends State<HomePage> {
       );
       Navigator.pop(context);
 
-      print('SUCCESS!');
+      // print('SUCCESS!'); 
     } catch (error) {
       if (error is emailjs.EmailJSResponseStatus) {
-        print('ERROR... $error');
+        // print('ERROR... $error');
         // Show error snackbar
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
@@ -580,7 +582,7 @@ class _HomePageState extends State<HomePage> {
           ),
         );
       }
-      print(error.toString());
+      // print(error.toString());
     }
   }
 }

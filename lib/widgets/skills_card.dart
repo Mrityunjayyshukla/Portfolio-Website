@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow; 
-import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
+import 'package:flutter/material.dart'; 
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolio/data/skills_data.dart';
 
@@ -39,13 +38,11 @@ class _SkillsCardState extends State<SkillsCard> {
               blurRadius: isPressed ? 5 : 20,
               offset: isPressed ? const Offset(-10, -10) : const Offset(-10,-10),
               color: Colors.white,
-              inset: isPressed,
             ),
             BoxShadow(
               blurRadius: isPressed ? 5 : 20,
               offset: isPressed ? const Offset(10, 10) : const Offset(10,10),
               color: const Color(0xFFA7A9AF),
-              inset: isPressed,
             ),
             
           ]

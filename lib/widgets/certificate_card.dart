@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
-import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -54,13 +53,11 @@ class _CertificateCardState extends State<CertificateCard> {
                     _isHover ? const Offset(-10, -10) : const Offset(-10, -10),
                 color: Colors.white,
                 blurRadius: _isHover ? 5 : 20,
-                inset: _isHover,
               ),
               BoxShadow(
                 blurRadius: _isHover ? 5 : 20,
                 offset: _isHover ? const Offset(10, 10) : const Offset(10, 10),
                 color: const Color(0xFFA7A9AF),
-                inset: _isHover,
               ),
             ],
           ),

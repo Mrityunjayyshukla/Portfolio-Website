@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
-import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/data/education_data.dart';
@@ -279,13 +278,11 @@ class TimelineCard extends StatelessWidget {
               blurRadius: 20,
               offset: Offset(-10, -10),
               color: Colors.white,
-              inset: false,
             ),
             BoxShadow(
               blurRadius: 20,
               offset: Offset(10, 10),
               color: Color(0xFFA7A9AF),
-              inset: false,
             )
           ]),
       child: child,

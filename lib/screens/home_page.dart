@@ -2,7 +2,6 @@
 
 import 'package:emailjs/emailjs.dart' as emailjs;
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/screens/about_section.dart';
@@ -525,10 +524,10 @@ class _HomePageState extends State<HomePage> {
 
   void _sendEmail() async {
     try {
-      final publicKey = dotenv.env['PUBLIC_KEY'];
-      final privateKey = dotenv.env['PRIVATE_KEY'];
-      final serviceId = dotenv.env['SERVICE_ID'];
-      final templateId = dotenv.env['TEMPLATE_ID'];
+      const publicKey = String.fromEnvironment("PUBLIC_KEY");
+      const privateKey = String.fromEnvironment("PRIVATE_KEY");
+      const serviceId = String.fromEnvironment("SERVICE_ID");
+      const templateId = String.fromEnvironment("TEMPLATE_ID");
 
       // Collect the values entered in the text fields
       final name = nameController.text.trim();
@@ -537,8 +536,8 @@ class _HomePageState extends State<HomePage> {
       final message = messageController.text.trim();
 
       await emailjs.send(
-        serviceId!,
-        templateId!,
+        serviceId,
+        templateId,
         {
           'from_name': name, // Use name from the controller
           'user_email': email, // Use email from the controller

@@ -471,7 +471,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
 
-                // actionsAlignment: MainAxisAlignment.end,
               ),
             );
           },
@@ -545,13 +544,14 @@ class _HomePageState extends State<HomePage> {
           'message': message, // Use message from the controller
           'to_name': "Mrityunjay Shukla",
         },
-        emailjs.Options(
-            publicKey: publicKey,
-            privateKey: privateKey,
-            limitRate: const emailjs.LimitRate(
-              id: 'app',
-              throttle: 10000,
-            )),
+        const emailjs.Options(
+          publicKey: publicKey,
+          privateKey: privateKey,
+          limitRate: emailjs.LimitRate(
+            id: 'app',
+            throttle: 10000,
+          ),
+        ),
       );
 
       // After successfully sending the email, clear the text fields
@@ -569,7 +569,7 @@ class _HomePageState extends State<HomePage> {
       );
       Navigator.pop(context);
 
-      // print('SUCCESS!'); 
+      // print('SUCCESS!');
     } catch (error) {
       if (error is emailjs.EmailJSResponseStatus) {
         // print('ERROR... $error');

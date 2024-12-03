@@ -17,7 +17,7 @@ class TimelineCustomWidget extends StatelessWidget {
         ),
         indicatorStyle: IndicatorStyle(
             indicator: SvgPicture.asset(
-          "icons/down_arrow.svg",
+          "assets/icons/down_arrow.svg",
           height: 24,
           width: 24,
         )),
@@ -183,7 +183,7 @@ class EducationCustomWidget extends StatelessWidget {
         ),
         indicatorStyle: IndicatorStyle(
             indicator: SvgPicture.asset(
-          "icons/down_arrow.svg",
+          "assets/icons/down_arrow.svg",
           height: 24,
           width: 24,
         )),
@@ -250,7 +250,7 @@ class EducationCustomWidget extends StatelessWidget {
         isLast: true,
         indicatorStyle: IndicatorStyle(
             indicator: SvgPicture.asset(
-          "icons/up_arrow.svg",
+          "assets/icons/up_arrow.svg",
           height: 24,
           width: 24,
         )),
@@ -308,7 +308,7 @@ class _SingleSideTimelineState extends State<SingleSideTimeline> {
           ),
           indicatorStyle: IndicatorStyle(
               indicator: SvgPicture.asset(
-            "icons/down_arrow.svg",
+            "assets/icons/down_arrow.svg",
             height: 24,
             width: 24,
           )),
@@ -446,7 +446,7 @@ class _SingleSideTimelineState extends State<SingleSideTimeline> {
           isLast: true,
           indicatorStyle: IndicatorStyle(
             indicator: SvgPicture.asset(
-              "icons/up_arrow.svg",
+              "assets/icons/up_arrow.svg",
               height: 24,
               width: 24,
             ),
@@ -477,7 +477,7 @@ class _EducationSingleSideTimelineState
           ),
           indicatorStyle: IndicatorStyle(
               indicator: SvgPicture.asset(
-            "icons/down_arrow.svg",
+            "assets/icons/down_arrow.svg",
             height: 24,
             width: 24,
           )),
@@ -535,7 +535,7 @@ class _EducationSingleSideTimelineState
           isLast: true,
           indicatorStyle: IndicatorStyle(
             indicator: SvgPicture.asset(
-              "icons/up_arrow.svg",
+              "assets/icons/up_arrow.svg",
               height: 24,
               width: 24,
             ),

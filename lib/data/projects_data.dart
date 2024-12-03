@@ -5,7 +5,7 @@ class ProjectsData {
   ProjectsData({required this.imagePath, required this.title});
 }
 
-const imagePath = "images/projects/";
+const imagePath = "assets/images/projects/";
 
 List<ProjectsData> threeDProjectData = <ProjectsData>[
   ProjectsData(

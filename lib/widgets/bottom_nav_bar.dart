@@ -59,7 +59,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               GestureDetector(
                 onTap: () => widget.onItemTapped(0),
                 child: SvgPicture.asset(
-                  "icons/home.svg",
+                  "assets/icons/home.svg",
                   height: (isMobile) ? 28 : 32,
                   width: (isMobile) ? 28 : 32,
                   colorFilter: ColorFilter.mode(
@@ -73,7 +73,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               GestureDetector(
                 onTap: () => widget.onItemTapped(1),
                 child: SvgPicture.asset(
-                  "icons/about.svg",
+                  "assets/icons/about.svg",
                   height: (isMobile) ? 28 : 32,
                   width: (isMobile) ? 28 : 32,
                   colorFilter: ColorFilter.mode(
@@ -87,7 +87,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               GestureDetector(
                 onTap: () => widget.onItemTapped(2),
                 child: SvgPicture.asset(
-                  "icons/projects.svg",
+                  "assets/icons/projects.svg",
                   height: (isMobile) ? 28 : 32,
                   width: (isMobile) ? 28 : 32,
                   colorFilter: ColorFilter.mode(
@@ -101,7 +101,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               GestureDetector(
                 onTap: () => widget.onItemTapped(3),
                 child: SvgPicture.asset(
-                  "icons/experiences.svg",
+                  "assets/icons/experiences.svg",
                   height: (isMobile) ? 28 : 32,
                   width: (isMobile) ? 28 : 32,
                   colorFilter: ColorFilter.mode(
@@ -132,7 +132,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     );
                   },
                   child: SvgPicture.asset(
-                    "icons/resume.svg",
+                    "assets/icons/resume.svg",
                     height: (isMobile) ? 28 : 32,
                     width: (isMobile) ? 28 : 32,
                     colorFilter: ColorFilter.mode(

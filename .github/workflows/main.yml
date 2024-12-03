@@ -43,7 +43,11 @@ jobs:
 
       # 5. Build the Flutter web app
       - name: Build Flutter Web
-        run: flutter build web --release --web-renderer html --dart-define=PRIVATE_KEY=${{ secrets.PRIVATE_KEY }} --dart-define=PUBLIC_KEY=${{ vars.PUBLIC_KEY }} --dart-define=TEMPLATE_ID=${{ vars.TEMPLATE_ID }} --dart-define=SERVICE_ID=${{ vars.SERVICE_ID }}
+        run: flutter build web --release --web-renderer html \
+          --dart-define=PRIVATE_KEY=${{ secrets.PRIVATE_KEY }} \
+          --dart-define=PUBLIC_KEY=${{ secrets.PUBLIC_KEY }} \
+          --dart-define=TEMPLATE_ID=${{ secrets.TEMPLATE_ID }} \
+          --dart-define=SERVICE_ID=${{ secrets.SERVICE_ID }}
 
 
       # 6. Deploy to GitHub Pages

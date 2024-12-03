@@ -86653,31 +86653,31 @@ l=n?28:32
 if(o.a.c===0)k=A.K(a).ax.y
 else{k=A.K(a).ax
 j=k.CW
-k=j==null?k.y:j}l=A.dp(e,A.df("icons/home.svg",new A.kI(k,B.cJ,e,B.dv),m,l),B.F,!1,e,e,e,e,e,e,e,e,e,e,e,e,e,new A.aj9(o),e,e,e,e,e,e)
+k=j==null?k.y:j}l=A.dp(e,A.df("assets/icons/home.svg",new A.kI(k,B.cJ,e,B.dv),m,l),B.F,!1,e,e,e,e,e,e,e,e,e,e,e,e,e,new A.aj9(o),e,e,e,e,e,e)
 m=n?28:32
 k=n?28:32
 if(o.a.c===1)j=A.K(a).ax.y
 else{j=A.K(a).ax
 i=j.CW
-j=i==null?j.y:i}k=A.dp(e,A.df("icons/about.svg",new A.kI(j,B.cJ,e,B.dv),m,k),B.F,!1,e,e,e,e,e,e,e,e,e,e,e,e,e,new A.aja(o),e,e,e,e,e,e)
+j=i==null?j.y:i}k=A.dp(e,A.df("assets/icons/about.svg",new A.kI(j,B.cJ,e,B.dv),m,k),B.F,!1,e,e,e,e,e,e,e,e,e,e,e,e,e,new A.aja(o),e,e,e,e,e,e)
 m=n?28:32
 j=n?28:32
 if(o.a.c===2)i=A.K(a).ax.y
 else{i=A.K(a).ax
 h=i.CW
-i=h==null?i.y:h}j=A.dp(e,A.df("icons/projects.svg",new A.kI(i,B.cJ,e,B.dv),m,j),B.F,!1,e,e,e,e,e,e,e,e,e,e,e,e,e,new A.ajb(o),e,e,e,e,e,e)
+i=h==null?i.y:h}j=A.dp(e,A.df("assets/icons/projects.svg",new A.kI(i,B.cJ,e,B.dv),m,j),B.F,!1,e,e,e,e,e,e,e,e,e,e,e,e,e,new A.ajb(o),e,e,e,e,e,e)
 m=n?28:32
 i=n?28:32
 if(o.a.c===3)h=A.K(a).ax.y
 else{h=A.K(a).ax
 g=h.CW
-h=g==null?h.y:g}i=A.dp(e,A.df("icons/experiences.svg",new A.kI(h,B.cJ,e,B.dv),m,i),B.F,!1,e,e,e,e,e,e,e,e,e,e,e,e,e,new A.ajc(o),e,e,e,e,e,e)
+h=g==null?h.y:g}i=A.dp(e,A.df("assets/icons/experiences.svg",new A.kI(h,B.cJ,e,B.dv),m,i),B.F,!1,e,e,e,e,e,e,e,e,e,e,e,e,e,new A.ajc(o),e,e,e,e,e,e)
 m=n?28:32
 n=n?28:32
 if(o.d)h=A.K(a).ax.y
 else{h=A.K(a).ax
 g=h.CW
-h=g==null?h.y:g}return new A.bT(new A.aq(s,0,s,24),A.dL(e,A.jR(A.a([l,k,j,i,A.e2(A.dp(e,A.df("icons/resume.svg",new A.kI(h,B.cJ,e,B.dv),m,n),B.F,!1,e,e,e,e,e,e,e,e,e,e,e,e,e,new A.ajd(),e,e,e,e,e,e),B.af,e,new A.aje(o),new A.ajf(o),e)],t.p),B.R,B.by,B.O),B.u,e,new A.cp(r.ax.b,e,e,p,q,e,B.a7),e,e,e,new A.aq(d,16,d,16),e,e,e),e)},
+h=g==null?h.y:g}return new A.bT(new A.aq(s,0,s,24),A.dL(e,A.jR(A.a([l,k,j,i,A.e2(A.dp(e,A.df("assets/icons/resume.svg",new A.kI(h,B.cJ,e,B.dv),m,n),B.F,!1,e,e,e,e,e,e,e,e,e,e,e,e,e,new A.ajd(),e,e,e,e,e,e),B.af,e,new A.aje(o),new A.ajf(o),e)],t.p),B.R,B.by,B.O),B.u,e,new A.cp(r.ax.b,e,e,p,q,e,B.a7),e,e,e,new A.aq(d,16,d,16),e,e,e),e)},
 $S:185}
 A.aj9.prototype={
 $0(){return this.a.a.Az(0)},
@@ -86820,7 +86820,7 @@ A.apJ.prototype={
 $0(){this.a.d=!1},
 $S:0}
 A.OT.prototype={
-K(a){var s,r,q,p=null,o=A.hE(new A.d8(A.K(a).ax.y),B.b_,B.hN,p,A.hf(B.ay,A.df("icons/down_arrow.svg",p,24,24)),!0,!1,p),n=A.K(a),m=t.p
+K(a){var s,r,q,p=null,o=A.hE(new A.d8(A.K(a).ax.y),B.b_,B.hN,p,A.hf(B.ay,A.df("assets/icons/down_arrow.svg",p,24,24)),!0,!1,p),n=A.K(a),m=t.p
 n=A.hE(new A.d8(A.K(a).ax.y),B.b_,new A.d8(n.ax.y),p,A.hf(A.K(a).ax.y,p),!1,!1,new A.j5(A.d6(A.a([A.aI($.ez()[0].a,p,p,p,A.aX().$2$fontSize$fontWeight(16,B.H),p,p),B.aB,A.aI($.ez()[0].b,p,p,p,A.aX().$2$fontSize$fontWeight(16,B.r),p,p),B.aB,A.aI($.ez()[0].c,p,p,p,A.aX().$2$fontSize$fontWeight(16,B.k),p,p)],m),B.bk,B.bM,B.O),p))
 s=A.K(a)
 r=A.K(a)
@@ -86829,24 +86829,24 @@ q=A.hE(new A.d8(r.ax.y),B.b_,new A.d8(s.ax.y),new A.j5(A.d6(A.a([A.aI($.ez()[1].
 s=A.K(a)
 return A.d6(A.a([o,n,q,A.hE(new A.d8(A.K(a).ax.y),B.b_,new A.d8(s.ax.y),p,A.hf(A.K(a).ax.y,p),!1,!1,new A.j5(A.d6(A.a([A.aI($.ez()[2].a,p,p,p,A.aX().$2$fontSize$fontWeight(16,B.H),p,p),B.aB,A.aI($.ez()[2].b,p,p,p,A.aX().$2$fontSize$fontWeight(16,B.r),p,p),B.aB,A.aI($.ez()[2].c,p,p,p,A.aX().$2$fontSize$fontWeight(16,B.k),p,p)],m),B.bk,B.ah,B.O),p)),A.hE(p,B.b_,new A.d8(A.K(a).ax.y),p,A.hf(B.ay,A.df("icons/up_arrow.svg",p,24,24)),!1,!0,p)],m),B.R,B.ah,B.O)}}
 A.Ja.prototype={
-K(a){var s=null,r=A.hE(new A.d8(A.K(a).ax.y),B.b_,B.hN,s,A.hf(B.ay,A.df("icons/down_arrow.svg",s,24,24)),!0,!1,s),q=A.K(a),p=t.p
-return A.d6(A.a([r,A.hE(new A.d8(A.K(a).ax.y),B.b_,new A.d8(q.ax.y),s,A.hf(A.K(a).ax.y,s),!1,!1,new A.j5(A.d6(A.a([A.aI($.on()[0].a,s,s,s,A.aX().$2$fontSize$fontWeight(16,B.H),s,s),B.aB,A.aI($.on()[0].b,s,s,s,A.aX().$2$fontSize$fontWeight(16,B.r),s,s),B.aB,A.aI($.on()[0].c,s,s,s,A.aX().$3$fontSize$fontStyle$fontWeight(16,B.c5,B.r),s,s),B.aB,A.aI($.on()[0].d,s,s,s,A.aX().$2$fontSize$fontWeight(16,B.k),s,s)],p),B.bk,B.ah,B.O),s)),A.hE(s,B.b_,new A.d8(A.K(a).ax.y),s,A.hf(B.ay,A.df("icons/up_arrow.svg",s,24,24)),!1,!0,s)],p),B.R,B.ah,B.O)}}
+K(a){var s=null,r=A.hE(new A.d8(A.K(a).ax.y),B.b_,B.hN,s,A.hf(B.ay,A.df("assets/icons/down_arrow.svg",s,24,24)),!0,!1,s),q=A.K(a),p=t.p
+return A.d6(A.a([r,A.hE(new A.d8(A.K(a).ax.y),B.b_,new A.d8(q.ax.y),s,A.hf(A.K(a).ax.y,s),!1,!1,new A.j5(A.d6(A.a([A.aI($.on()[0].a,s,s,s,A.aX().$2$fontSize$fontWeight(16,B.H),s,s),B.aB,A.aI($.on()[0].b,s,s,s,A.aX().$2$fontSize$fontWeight(16,B.r),s,s),B.aB,A.aI($.on()[0].c,s,s,s,A.aX().$3$fontSize$fontStyle$fontWeight(16,B.c5,B.r),s,s),B.aB,A.aI($.on()[0].d,s,s,s,A.aX().$2$fontSize$fontWeight(16,B.k),s,s)],p),B.bk,B.ah,B.O),s)),A.hE(s,B.b_,new A.d8(A.K(a).ax.y),s,A.hf(B.ay,A.df("assets/icons/up_arrow.svg",s,24,24)),!1,!0,s)],p),B.R,B.ah,B.O)}}
 A.j5.prototype={
 K(a){var s=null,r=A.rG(B.h0,0.5)
 return A.dL(s,this.c,B.u,s,new A.cp(A.K(a).ax.b,s,r,A.eC(12),B.K_,s,B.a7),s,s,B.Hs,B.hj,s,s,s)}}
 A.BH.prototype={
 af(){return new A.Vy()}}
 A.Vy.prototype={
-K(a){var s,r,q=null,p=A.hE(new A.d8(A.K(a).ax.y),B.b_,B.hN,q,A.hf(B.ay,A.df("icons/down_arrow.svg",q,24,24)),!0,!1,q),o=t.p,n=A.d6(A.a([A.aI($.ez()[0].a,q,q,q,A.aX().$2$fontSize$fontWeight(16,B.H),B.aC,q),B.aB,A.aI($.ez()[0].b,q,q,q,A.aX().$2$fontSize$fontWeight(16,B.r),q,q),B.aB,A.aI($.ez()[0].c,q,q,q,A.aX().$2$fontSize$fontWeight(16,B.k),B.aC,q)],o),B.R,B.bM,B.O),m=A.K(a)
+K(a){var s,r,q=null,p=A.hE(new A.d8(A.K(a).ax.y),B.b_,B.hN,q,A.hf(B.ay,A.df("assets/icons/down_arrow.svg",q,24,24)),!0,!1,q),o=t.p,n=A.d6(A.a([A.aI($.ez()[0].a,q,q,q,A.aX().$2$fontSize$fontWeight(16,B.H),B.aC,q),B.aB,A.aI($.ez()[0].b,q,q,q,A.aX().$2$fontSize$fontWeight(16,B.r),q,q),B.aB,A.aI($.ez()[0].c,q,q,q,A.aX().$2$fontSize$fontWeight(16,B.k),B.aC,q)],o),B.R,B.bM,B.O),m=A.K(a)
 m=A.hE(new A.d8(A.K(a).ax.y),B.b_,new A.d8(m.ax.y),q,A.hf(A.K(a).ax.y,q),!1,!1,q)
 s=A.d6(A.a([A.aI($.ez()[1].a,q,q,q,A.aX().$2$fontSize$fontWeight(16,B.H),B.aC,q),B.aB,A.aI($.ez()[1].b,q,q,q,A.aX().$2$fontSize$fontWeight(16,B.r),q,q),B.aB,A.aI($.ez()[1].c,q,q,q,A.aX().$2$fontSize$fontWeight(16,B.k),B.aC,q)],o),B.R,B.bM,B.O)
 r=A.K(a)
-return A.d6(A.a([p,new A.j5(n,q),m,new A.j5(s,q),A.hE(new A.d8(A.K(a).ax.y),B.b_,new A.d8(r.ax.y),q,A.hf(A.K(a).ax.y,q),!1,!1,q),new A.j5(A.d6(A.a([A.aI($.ez()[2].a,q,q,q,A.aX().$2$fontSize$fontWeight(16,B.H),B.aC,q),B.aB,A.aI($.ez()[2].b,q,q,q,A.aX().$2$fontSize$fontWeight(16,B.r),q,q),B.aB,A.aI($.ez()[2].c,q,q,q,A.aX().$2$fontSize$fontWeight(16,B.k),B.aC,q)],o),B.R,B.bM,B.O),q),A.hE(q,B.b_,new A.d8(A.K(a).ax.y),q,A.hf(B.ay,A.df("icons/up_arrow.svg",q,24,24)),!1,!0,q)],o),B.R,B.ah,B.O)}}
+return A.d6(A.a([p,new A.j5(n,q),m,new A.j5(s,q),A.hE(new A.d8(A.K(a).ax.y),B.b_,new A.d8(r.ax.y),q,A.hf(A.K(a).ax.y,q),!1,!1,q),new A.j5(A.d6(A.a([A.aI($.ez()[2].a,q,q,q,A.aX().$2$fontSize$fontWeight(16,B.H),B.aC,q),B.aB,A.aI($.ez()[2].b,q,q,q,A.aX().$2$fontSize$fontWeight(16,B.r),q,q),B.aB,A.aI($.ez()[2].c,q,q,q,A.aX().$2$fontSize$fontWeight(16,B.k),B.aC,q)],o),B.R,B.bM,B.O),q),A.hE(q,B.b_,new A.d8(A.K(a).ax.y),q,A.hf(B.ay,A.df("assets/icons/up_arrow.svg",q,24,24)),!1,!0,q)],o),B.R,B.ah,B.O)}}
 A.y7.prototype={
 af(){return new A.RB()}}
 A.RB.prototype={
 K(a){var s=null,r=t.p
-return A.d6(A.a([A.hE(new A.d8(A.K(a).ax.y),B.b_,B.hN,s,A.hf(B.ay,A.df("icons/down_arrow.svg",s,24,24)),!0,!1,s),new A.j5(A.d6(A.a([A.aI($.on()[0].a,s,s,s,A.aX().$2$fontSize$fontWeight(16,B.H),B.aC,s),B.aB,A.aI($.on()[0].b,s,s,s,A.aX().$2$fontSize$fontWeight(16,B.r),B.aC,s),B.aB,A.aI($.on()[0].c,s,s,s,A.aX().$3$fontSize$fontStyle$fontWeight(16,B.c5,B.r),B.aC,s),B.aB,A.aI($.on()[0].d,s,s,s,A.aX().$2$fontSize$fontWeight(16,B.k),B.aC,s)],r),B.R,B.ah,B.O),s),A.hE(s,B.b_,new A.d8(A.K(a).ax.y),s,A.hf(B.ay,A.df("icons/up_arrow.svg",s,24,24)),!1,!0,s)],r),B.R,B.ah,B.O)}}
+return A.d6(A.a([A.hE(new A.d8(A.K(a).ax.y),B.b_,B.hN,s,A.hf(B.ay,A.df("assets/icons/down_arrow.svg",s,24,24)),!0,!1,s),new A.j5(A.d6(A.a([A.aI($.on()[0].a,s,s,s,A.aX().$2$fontSize$fontWeight(16,B.H),B.aC,s),B.aB,A.aI($.on()[0].b,s,s,s,A.aX().$2$fontSize$fontWeight(16,B.r),B.aC,s),B.aB,A.aI($.on()[0].c,s,s,s,A.aX().$3$fontSize$fontStyle$fontWeight(16,B.c5,B.r),B.aC,s),B.aB,A.aI($.on()[0].d,s,s,s,A.aX().$2$fontSize$fontWeight(16,B.k),B.aC,s)],r),B.R,B.ah,B.O),s),A.hE(s,B.b_,new A.d8(A.K(a).ax.y),s,A.hf(B.ay,A.df("assets/icons/up_arrow.svg",s,24,24)),!1,!0,s)],r),B.R,B.ah,B.O)}}
 A.uy.prototype={}
 A.a9m.prototype={
 no(a,b,c){return this.a_o(a,b,c)},
@@ -97252,9 +97252,9 @@ r($,"aZ5","axa",()=>{var q="nptel.png",p="September 2023",o="python.png",n="hack
 return A.a([A.xi("NPTEL",q,"ml.png","https://drive.google.com/file/d/1jq07wHPQRGWOyLd0gBExyfhit1_leWYO/view?usp=drivesdk","Introduction to Machine Learning",p),A.xi("NPTEL",q,"dbms.png","https://drive.google.com/file/d/1jrYcfN2mQWI21oU0Dm1Rt9M8L9sVvIiI/view?usp=drivesdk","Introduction to DBMS","March 2024"),A.xi("Coincent AI","coincent.png","ml.png","https://drive.google.com/file/d/12Ixc8DnALwKf6ZBeWi9C7ZEE7cs7mRPk/view?usp=drivesdk","Introduction to AI with Python","July 2022"),A.xi("Udemy","udemy.png",o,"https://drive.google.com/file/d/1kmVxHLMYstTKQErSNdWgRJ5tF4geI9fj/view?usp=drivesdk","Introduction to Python Programming",p),A.xi(m,n,o,"https://www.hackerrank.com/certificates/b51806d7087d","Python (Basic)",l),A.xi(m,n,"mysql.png","https://www.hackerrank.com/certificates/1cc594b71081","MySQL (Basic)",l)],A.a1("t<I5>"))})
 r($,"aZc","on",()=>A.a([new A.Jb("B.Tech in Computer Science & Engineering","SRM Institute of Science & Technology, Delhi NCR","Sep 2021 - present","CGPA : 9.04 /10")],A.a1("t<Jb>")))
 r($,"aZe","ez",()=>A.a([A.auh("Mastering in Generative AI (GenAI) and Large Language Models (LLM).\nDeveloping a chatbot with OpenAI during training, designed to enhance user interaction and support potential customer engagement initiatives, leading to a 25% improvement in response quality.\nDriving project milestones through documentation and analysis.","Jul 2024 - Sep 2024","Project Intern | GlobalLogic"),A.auh("Engineered the front-end of a travel booking app using Flutter and Dart.\nTeamed up with UI/UX designers to ensure optimized functionality and enhanced usability.\nBuilt custom widgets and optimized code, reducing app load time by 2-5 seconds and improving user  satisfaction by 30-35%.","Dec 2023 - Feb 2023","Android Developer | Visanka Technologies"),A.auh("Specialized in Application Management, Infrastructure Management, and Service Management.\nAssisted with server configuration, network management, and software deployment.\nGained hands-on experience in IT service processes, developing a foundational understanding of service  efficiency improvements.","Jun 2023 - Dec 2023","IT Infra Trainee | iSON Technologies")],A.a1("t<Jq>")))
-r($,"aZB","aHL",()=>A.a([A.nc("images/projects/ThreeD-1.jpg","San Andreas Opening Scene"),A.nc("images/projects/ThreeD-2.jpg","Lamborghini Aventador Design"),A.nc("images/projects/ThreeD-3.jpg","Living Room Interior Design"),A.nc("images/projects/ThreeD-4.jpg","Botanic Heaven"),A.nc("images/projects/ThreeD-5.jpg","Scandinavian Bedroom Scene")],A.a1("t<u8>")))
-r($,"aZE","axk",()=>A.a([A.nc("images/projects/UX-1.png","Instagram Redesign"),A.nc("images/projects/UX-2.png","Marvel-Watch"),A.nc("images/projects/UX-3.png","Tune-in Music Player")],A.a1("t<u8>")))
-r($,"aZu","axi",()=>A.a([A.nc("images/projects/UX-2.png","Marvel-Watch")],A.a1("t<u8>")))
+r($,"aZB","aHL",()=>A.a([A.nc("assets/images/projects/ThreeD-1.jpg","San Andreas Opening Scene"),A.nc("assets/images/projects/ThreeD-2.jpg","Lamborghini Aventador Design"),A.nc("assets/images/projects/ThreeD-3.jpg","Living Room Interior Design"),A.nc("assets/images/projects/ThreeD-4.jpg","Botanic Heaven"),A.nc("assets/images/projects/ThreeD-5.jpg","Scandinavian Bedroom Scene")],A.a1("t<u8>")))
+r($,"aZE","axk",()=>A.a([A.nc("assets/images/projects/UX-1.png","Instagram Redesign"),A.nc("assets/images/projects/UX-2.png","Marvel-Watch"),A.nc("assets/images/projects/UX-3.png","Tune-in Music Player")],A.a1("t<u8>")))
+r($,"aZu","axi",()=>A.a([A.nc("assets/images/projects/UX-2.png","Marvel-Watch")],A.a1("t<u8>")))
 r($,"aZm","aHE",()=>A.v1(B.aw,B.Dg,null))
 s($,"aWV","awX",()=>new A.I())
 r($,"aNg","awW",()=>{var q=new A.a9m()

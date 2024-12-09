@@ -16,6 +16,7 @@ class LeftPanel extends StatelessWidget {
             "assets/icons/behance.svg",
             height: 32,
             width: 32,
+            color: Theme.of(context).colorScheme.secondary,
           )
         ),
         const SizedBox(height: 24),
@@ -25,6 +26,7 @@ class LeftPanel extends StatelessWidget {
             "assets/icons/artstation.svg",
             height: 32,
             width: 32,
+            color: Theme.of(context).colorScheme.secondary,
           )
         ),
         const SizedBox(height: 24),
@@ -34,6 +36,7 @@ class LeftPanel extends StatelessWidget {
             "assets/icons/github.svg",
             height: 32,
             width: 32,
+            color: Theme.of(context).colorScheme.secondary,
           )
         ),
         const SizedBox(height: 24),
@@ -43,6 +46,7 @@ class LeftPanel extends StatelessWidget {
             "assets/icons/twitter.svg",
             height: 32,
             width: 32,
+            color: Theme.of(context).colorScheme.secondary,
           )
         ),
         const SizedBox(height: 24),
@@ -52,6 +56,7 @@ class LeftPanel extends StatelessWidget {
             "assets/icons/linkedin.svg",
             height: 32,
             width: 32,
+            color: Theme.of(context).colorScheme.secondary,
           )
         ),
       ],

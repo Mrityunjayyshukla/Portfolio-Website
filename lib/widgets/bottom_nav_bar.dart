@@ -45,10 +45,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 color: Theme.of(context).colorScheme.shadow,
                 offset: const Offset(10, 10),
               ),
-              const BoxShadow(
+              BoxShadow(
                 blurRadius: 24,
-                color: Color(0xFFFFFFFF),
-                offset: Offset(-10, -10),
+                color: Theme.of(context).colorScheme.surface,
+                offset: const Offset(-10, -10),
               ),
             ],
             borderRadius: BorderRadius.circular(40),

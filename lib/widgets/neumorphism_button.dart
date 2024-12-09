@@ -24,17 +24,17 @@ class NeumorphismButton extends StatelessWidget {
               color: Theme.of(context).colorScheme.shadow,
               offset: const Offset(10, 10),
             ),
-            const BoxShadow(
+            BoxShadow(
               blurRadius: 24,
-              color: Color(0xFFFFFFFF),
-              offset: Offset(-10, -10),
+              color: Theme.of(context).colorScheme.surface,
+              offset: const Offset(-10, -10),
             ),
           ],
-          gradient: const LinearGradient(
-            stops: [0,1],
+          gradient:  LinearGradient(
+            stops: const [0,1],
             colors: [
-              Color(0xFFCECECE),
-              Color(0xFFF5F5F5),
+              Theme.of(context).colorScheme.primaryContainer,
+              Theme.of(context).colorScheme.onPrimaryContainer
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,

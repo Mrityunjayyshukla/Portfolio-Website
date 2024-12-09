@@ -469,51 +469,47 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-
               ),
             );
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
-                curve: Curves.easeInOut,
-                padding: EdgeInsets.symmetric(
-                    vertical: 16, horizontal: (isDesktop) ? 24 : 16),
-                decoration: BoxDecoration(
-                  color: _fabHover
-                      ? Theme.of(context).colorScheme.secondary
-                      : Theme.of(context).colorScheme.primary,
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 24,
-                      color: Theme.of(context).colorScheme.shadow,
-                      offset: const Offset(10, 10),
+              duration: const Duration(milliseconds: 200),
+              curve: Curves.easeInOut,
+              padding: EdgeInsets.symmetric(
+                  vertical: 16, horizontal: (isDesktop) ? 24 : 16),
+              decoration: BoxDecoration(
+                color: _fabHover
+                    ? Theme.of(context).colorScheme.surface
+                    : Theme.of(context).colorScheme.primary,
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 24,
+                    color: Theme.of(context).colorScheme.shadow,
+                    offset: const Offset(10, 10),
+                  ),
+                  BoxShadow(
+                    blurRadius: 24,
+                    color: Theme.of(context).colorScheme.surface,
+                    offset: const Offset(-10, -10),
+                  ),
+                ],
+                borderRadius: BorderRadius.circular(40),
+              ),
+              child: (!isMobile)
+                  ? Text(
+                      "Contact Me",
+                      style: GoogleFonts.roboto(
+                        color: Theme.of(context).colorScheme.secondary,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  : Icon(
+                      Icons.contact_mail,
+                      color: Theme.of(context).colorScheme.secondary,
                     ),
-                    const BoxShadow(
-                      blurRadius: 24,
-                      color: Color(0xFFFFFFFF),
-                      offset: Offset(-10, -10),
-                    ),
-                  ],
-                  borderRadius: BorderRadius.circular(40),
-                ),
-                child: (!isMobile)
-                    ? Text(
-                        "Contact Me",
-                        style: GoogleFonts.roboto(
-                          color: _fabHover
-                              ? Theme.of(context).colorScheme.primary
-                              : Theme.of(context).colorScheme.secondary,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      )
-                    : Icon(
-                        Icons.contact_mail,
-                        color: _fabHover
-                            ? Theme.of(context).colorScheme.primary
-                            : Theme.of(context).colorScheme.secondary,
-                      )),
+            ),
           ),
         ),
       ),

@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Portfolio Website',
       theme: lightMode,
-      // darkTheme: darkMode,
+      darkTheme: darkMode,
       home: const HomePage(),
     );
   }

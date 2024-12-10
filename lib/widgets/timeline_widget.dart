@@ -16,11 +16,13 @@ class TimelineCustomWidget extends StatelessWidget {
           color: Theme.of(context).colorScheme.secondary,
         ),
         indicatorStyle: IndicatorStyle(
-            indicator: SvgPicture.asset(
-          "assets/icons/down_arrow.svg",
-          height: 24,
-          width: 24,
-        )),
+          indicator: SvgPicture.asset(
+            "assets/icons/down_arrow.svg",
+            height: 24,
+            width: 24,
+            color: Theme.of(context).colorScheme.secondary,
+          ),
+        ),
         alignment: TimelineAlign.center,
         isFirst: true,
       ),
@@ -165,6 +167,7 @@ class TimelineCustomWidget extends StatelessWidget {
           "icons/up_arrow.svg",
           height: 24,
           width: 24,
+          color: Theme.of(context).colorScheme.secondary,
         )),
       ),
     ]);
@@ -186,6 +189,7 @@ class EducationCustomWidget extends StatelessWidget {
           "assets/icons/down_arrow.svg",
           height: 24,
           width: 24,
+          color: Theme.of(context).colorScheme.secondary,
         )),
         alignment: TimelineAlign.center,
         isFirst: true,
@@ -253,6 +257,7 @@ class EducationCustomWidget extends StatelessWidget {
           "assets/icons/up_arrow.svg",
           height: 24,
           width: 24,
+          color: Theme.of(context).colorScheme.secondary,
         )),
       ),
     ]);
@@ -273,16 +278,16 @@ class TimelineCard extends StatelessWidget {
               color: const Color.fromARGB(255, 209, 209, 209), width: 0.5),
           color: Theme.of(context).colorScheme.primary,
           borderRadius: BorderRadius.circular(12),
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
               blurRadius: 20,
-              offset: Offset(-10, -10),
-              color: Colors.white,
+              offset: const Offset(-10, -10),
+              color: Theme.of(context).colorScheme.surface
             ),
             BoxShadow(
               blurRadius: 20,
-              offset: Offset(10, 10),
-              color: Color(0xFFA7A9AF),
+              offset: const Offset(10, 10),
+              color: Theme.of(context).colorScheme.shadow,
             )
           ]),
       child: child,
@@ -311,6 +316,7 @@ class _SingleSideTimelineState extends State<SingleSideTimeline> {
             "assets/icons/down_arrow.svg",
             height: 24,
             width: 24,
+            color: Theme.of(context).colorScheme.secondary,
           )),
           alignment: TimelineAlign.center,
           isFirst: true,
@@ -449,6 +455,8 @@ class _SingleSideTimelineState extends State<SingleSideTimeline> {
               "assets/icons/up_arrow.svg",
               height: 24,
               width: 24,
+              color: Theme.of(context).colorScheme.secondary,
+
             ),
           ),
         ),
@@ -480,6 +488,7 @@ class _EducationSingleSideTimelineState
             "assets/icons/down_arrow.svg",
             height: 24,
             width: 24,
+            color: Theme.of(context).colorScheme.secondary,
           )),
           alignment: TimelineAlign.center,
           isFirst: true,
@@ -538,6 +547,7 @@ class _EducationSingleSideTimelineState
               "assets/icons/up_arrow.svg",
               height: 24,
               width: 24,
+            color: Theme.of(context).colorScheme.secondary,
             ),
           ),
         ),

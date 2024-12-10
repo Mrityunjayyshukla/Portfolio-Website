@@ -56,10 +56,16 @@ class _AboutSectionState extends State<AboutSection> {
               textAlign: TextAlign.center,
               text: TextSpan(
                 style: GoogleFonts.roboto(
-                  fontSize: 24, color: Colors.black,
+                  fontSize: 24, 
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
                 children: [
-                  const TextSpan(text: "Results-driven Computer Science and Engineering professional with a strong foundation in Programming and Problem-Solving. Adept in "),
+                  TextSpan(
+                    text: "Results-driven Computer Science and Engineering professional with a strong foundation in Programming and Problem-Solving. Adept in ",
+                    style: GoogleFonts.roboto(
+                      fontSize: 24,
+                    ),
+                  ),
                   WidgetSpan(
                     alignment: PlaceholderAlignment.middle,
                     child: MouseRegion(
@@ -77,7 +83,7 @@ class _AboutSectionState extends State<AboutSection> {
                         "Python Programming,",
                         style: GoogleFonts.roboto(
                           fontWeight: FontWeight.bold,
-                          color: _pythonHovered ? Colors.grey : Colors.black,
+                          color: _pythonHovered ? Theme.of(context).colorScheme.tertiary : Theme.of(context).colorScheme.secondary,
                           fontSize: 24,
                         ),
                       ),
@@ -100,7 +106,7 @@ class _AboutSectionState extends State<AboutSection> {
                         " UI/UX Design,",
                         style: GoogleFonts.roboto(
                           fontWeight: FontWeight.bold,
-                          color: _uiuxHovered ? Colors.grey : Colors.black,
+                          color: _uiuxHovered ? Theme.of(context).colorScheme.tertiary : Theme.of(context).colorScheme.secondary,
                           fontSize: 24,
                         ),
                       ),
@@ -123,7 +129,7 @@ class _AboutSectionState extends State<AboutSection> {
                         " 3D Design,",
                         style: GoogleFonts.roboto(
                           fontWeight: FontWeight.bold,
-                          color: _threedDHovered ? Colors.grey : Colors.black,
+                          color: _threedDHovered ? Theme.of(context).colorScheme.tertiary : Theme.of(context).colorScheme.secondary,
                           fontSize: 24,
                         ),
                       ),
@@ -146,7 +152,7 @@ class _AboutSectionState extends State<AboutSection> {
                         " Cross-Platform App Development.",
                         style: GoogleFonts.roboto(
                           fontWeight: FontWeight.bold,
-                          color: _flutterHovered ? Colors.grey : Colors.black,
+                          color: _flutterHovered ? Theme.of(context).colorScheme.tertiary : Theme.of(context).colorScheme.secondary,
                           fontSize: 24,
                         ),
                       ),

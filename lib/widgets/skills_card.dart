@@ -37,12 +37,12 @@ class _SkillsCardState extends State<SkillsCard> {
             BoxShadow(
               blurRadius: isPressed ? 5 : 20,
               offset: isPressed ? const Offset(-10, -10) : const Offset(-10,-10),
-              color: Colors.white,
+              color: Theme.of(context).colorScheme.surface,
             ),
             BoxShadow(
               blurRadius: isPressed ? 5 : 20,
               offset: isPressed ? const Offset(10, 10) : const Offset(10,10),
-              color: const Color(0xFFA7A9AF),
+              color: Theme.of(context).colorScheme.shadow,
             ),
             
           ]

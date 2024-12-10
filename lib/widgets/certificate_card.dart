@@ -51,13 +51,13 @@ class _CertificateCardState extends State<CertificateCard> {
               BoxShadow(
                 offset:
                     _isHover ? const Offset(-10, -10) : const Offset(-10, -10),
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.shadow,
                 blurRadius: _isHover ? 5 : 20,
               ),
               BoxShadow(
                 blurRadius: _isHover ? 5 : 20,
                 offset: _isHover ? const Offset(10, 10) : const Offset(10, 10),
-                color: const Color(0xFFA7A9AF),
+                color: Theme.of(context).colorScheme.shadow,
               ),
             ],
           ),

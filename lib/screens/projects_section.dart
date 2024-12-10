@@ -55,6 +55,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                   return ProjectCard(
                     projectImage: programmingData[index].imagePath,
                     projectTitle: programmingData[index].title,
+                    link: programmingData[index].link,
                   );
                 },
               ),
@@ -103,6 +104,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                   return ProjectCard(
                     projectImage: uxProjectData[index].imagePath,
                     projectTitle: uxProjectData[index].title,
+                    link: uxProjectData[index].link,
                   );
                 },
               ),
@@ -151,6 +153,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                   return ProjectCard(
                     projectImage: threeDProjectData[index].imagePath,
                     projectTitle: threeDProjectData[index].title,
+                    link: threeDProjectData[index].link,
                   );
                 },
               ),

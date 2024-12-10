@@ -32,15 +32,15 @@ class _ProjectCardState extends State<ProjectCard> {
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
                 color: const Color.fromARGB(255, 209, 209, 209), width: 0.5),
-            boxShadow: const [
+            boxShadow: [
               BoxShadow(
-                offset: Offset(10, 10),
-                color: Color(0xFFA7A9AF),
+                offset: const Offset(10, 10),
+                color: Theme.of(context).colorScheme.shadow,
                 blurRadius: 5,
               ),
               BoxShadow(
-                offset: Offset(-10, -10),
-                color: Colors.white,
+                offset: const Offset(-10, -10),
+                color: Theme.of(context).colorScheme.surface,
                 blurRadius: 5,
               )
             ]),
@@ -69,7 +69,7 @@ class _ProjectCardState extends State<ProjectCard> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 24, vertical: 8),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).colorScheme.primary,
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
@@ -109,15 +109,15 @@ class _ScrollButtonsState extends State<ScrollButtons> {
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
               color: const Color.fromARGB(255, 209, 209, 209), width: 0.5),
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
-              offset: Offset(5, 5),
-              color: Color(0xFFA7A9AF),
+              offset: const Offset(5, 5),
+              color: Theme.of(context).colorScheme.shadow,
               blurRadius: 5,
             ),
             BoxShadow(
-              offset: Offset(-5, -5),
-              color: Colors.white,
+              offset: const Offset(-5, -5),
+              color: Theme.of(context).colorScheme.surface,
               blurRadius: 5,
             )
           ],

@@ -65,7 +65,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   colorFilter: ColorFilter.mode(
                     widget.selectedIndex == 0
                         ? Theme.of(context).colorScheme.secondary
-                        : Theme.of(context).colorScheme.tertiary,
+                        : Theme.of(context).colorScheme.shadow,
                     BlendMode.srcIn,
                   ),
                 ),
@@ -79,7 +79,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   colorFilter: ColorFilter.mode(
                     widget.selectedIndex == 1
                         ? Theme.of(context).colorScheme.secondary
-                        : Theme.of(context).colorScheme.tertiary,
+                        : Theme.of(context).colorScheme.shadow,
                     BlendMode.srcIn,
                   ),
                 ),
@@ -93,7 +93,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   colorFilter: ColorFilter.mode(
                     widget.selectedIndex == 2
                         ? Theme.of(context).colorScheme.secondary
-                        : Theme.of(context).colorScheme.tertiary,
+                        : Theme.of(context).colorScheme.shadow,
                     BlendMode.srcIn,
                   ),
                 ),
@@ -107,7 +107,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   colorFilter: ColorFilter.mode(
                     widget.selectedIndex == 3
                         ? Theme.of(context).colorScheme.secondary
-                        : Theme.of(context).colorScheme.tertiary,
+                        : Theme.of(context).colorScheme.shadow,
                     BlendMode.srcIn,
                   ),
                 ),
@@ -137,8 +137,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     width: (isMobile) ? 28 : 32,
                     colorFilter: ColorFilter.mode(
                       _resumeHover
-                          ? Theme.of(context).colorScheme.secondary
-                          : Theme.of(context).colorScheme.tertiary,
+                        ? Theme.of(context).colorScheme.secondary
+                        : Theme.of(context).colorScheme.shadow,
                       BlendMode.srcIn,
                     ),
                   ),

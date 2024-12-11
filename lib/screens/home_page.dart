@@ -7,11 +7,13 @@ import 'package:portfolio/screens/about_section.dart';
 import 'package:portfolio/screens/achievements_section.dart';
 import 'package:portfolio/screens/projects_section.dart';
 import 'package:portfolio/utils/responsive.dart';
+import 'package:portfolio/utils/theme_provider.dart';
 import 'package:portfolio/widgets/bottom_nav_bar.dart';
 import 'package:portfolio/screens/name_title.dart';
 import 'package:portfolio/widgets/contact_textfield.dart';
 import 'package:portfolio/widgets/left_panel.dart';
 import 'package:portfolio/widgets/neumorphism_button.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
@@ -98,6 +100,13 @@ class _HomePageState extends State<HomePage> {
               const Spacer(),
               Row(
                 children: [
+                  IconButton(
+                    onPressed: (){
+                      Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+                    },
+                    icon: isDarkMode ? const Icon(Icons.dark_mode) : const Icon(Icons.light_mode),
+                  ),
+                  const SizedBox(width: 32),
                   MouseRegion(
                     onEnter: (event) {
                       setState(() {

@@ -1,10 +1,16 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/screens/home_page.dart';
-import 'package:portfolio/utils/color_palette.dart';
+import 'package:portfolio/utils/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 void main()async {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    )
+  );
 }
 
 class NoThumbScrollBehavior extends ScrollBehavior {
@@ -26,8 +32,7 @@ class MyApp extends StatelessWidget {
       scrollBehavior: NoThumbScrollBehavior().copyWith(scrollbars: false),
       debugShowCheckedModeBanner: false,
       title: 'Portfolio Website',
-      theme: lightMode,
-      darkTheme: darkMode,
+      theme: Provider.of<ThemeProvider>(context).themeData,
       home: const HomePage(),
     );
   }

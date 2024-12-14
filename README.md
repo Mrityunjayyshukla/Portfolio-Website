@@ -30,11 +30,11 @@ This is my **Personal Portfolio Website** built using **Flutter**, designed to s
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/<username>/<repository>.git
+   git clone https://github.com/Mrityunjayyshukla/Portfolio-Website.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd <repository>
+   cd Portfolio-Website
    ```
 3. Install dependencies:
    ```bash

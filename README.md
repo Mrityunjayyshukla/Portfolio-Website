@@ -3,6 +3,8 @@
 [![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev/)  
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  
 [![GitHub issues](https://img.shields.io/github/issues/Mrityunjayyshukla/Portfolio-Website.svg)](https://github.com/Mrityunjayyshukla/Portfolio-Website/issues)
+![Views](https://komarev.com/ghpvc/?username=Mrityunjayyshukla&repo=Portfolio-Website&color=blue)
+
 
 ## 🚀 Overview
 
@@ -25,6 +27,8 @@ This is my **Personal Portfolio Website** built using **Flutter**, designed to s
 
 - **Flutter**: Frontend development for a seamless cross-platform experience.
 - **Dart**: Programming language for Flutter.
+- **GitHub Pages**: Deployment of the Website
+- **EmailJS**: Sending Email in the Contact Page 
 
 ## 📦 Installation
 
